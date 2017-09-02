@@ -30,7 +30,7 @@ return;
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['clr', 'prune'],
+  aliases: ['clr', 'prune', 'purge'],
   permLevel: 0
 };
 
@@ -40,5 +40,5 @@ exports.help = {
   usage: 'clear [number]',
   module: 'Admin',
   permit: 'Requires Manage Messages',
-  alias: '/ clr / prune'
+  alias: '/ clr / prune / purge'
 };
