@@ -1,3 +1,4 @@
 exports.moduledata = {
-  "name": "Utility"
+  "name": "Utility",
+  "codename": "Other"
 }
