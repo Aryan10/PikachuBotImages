@@ -10,4 +10,6 @@
 
 ## Hosting
 
-If you want to host the bot, adjust the [config.json](https://github.com/Aryan10/PikaBot/blob/master/config.json) to your requirements. And use Node to host it.
+>Clone or download the github repo.
+>Adjust the [config_example.json](https://github.com/Aryan10/PikaBot/blob/master/config_example.json) to your requirements. And rename it to **config.json**.
+>Use a VPS or NodeJs to host it.
