@@ -100,7 +100,6 @@ msg=`\nMeet ${member.user.tag}, the luckiest person ever!\n\n:clipboard:*Total m
   .setThumbnail(member.user.displayAvatarURL)
   .setFooter(`User Join`)
   .setTimestamp()
-  member.guild.defaultChannel.send(`**${member.user.username}**, Welcome to **${guild.name}**. Hope you will enjoy your stay:wink:`);
   const welcome_goodbye = guild.channels.find('name',"welcome_goodbye")
   if(!welcome_goodbye) return;
   welcome_goodbye.send({embed});
