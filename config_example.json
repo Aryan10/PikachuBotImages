@@ -1,0 +1,19 @@
+{
+/* your token here */
+"token": "",
+
+/* bot's prefix for all module */
+"prefix": "+",
+
+/* bot owner id, to have multiple owners seperate them by ","
+Example - [id1, id2, id3]*/
+"botOwner": "[]",
+
+/* other bot info */
+"status": "online",
+"game": "",
+"streaming": false,
+"streamingurl": "",
+
+/* bot's official server invite */
+"serverinvite": ""}
