@@ -1,21 +1,23 @@
 const config = require('../config.json');
+
 exports.run = (client, message, args) => {
-if(message.author.id !== config.botOwner) return message.reply('you are not my owner!!!'); 
-let announcemsg = message.content.split(" ").slice(1).join(' ');
-client.guilds.forEach(guild => {
-guild.defaultChannel.send({embed: {
-color:3447003,
-title:`Announcement Message from Bot Owner ${message.author.tag}!`,
-description:announcemsg
-}});
-});
+  if(message.author.id !== config.botOwner) return message.reply('you are not my owner!!!'); 
+  let announcemsg = message.content.split(" ").slice(1).join(' ');
+  client.guilds.forEach(guild => {
+    if (guild.defaultChannel === undefined) return;
+    guild.defaultChannel.send({embed: {
+      color:3447003,
+      title:`Announcement Message from Bot Owner ${message.author.tag}!`,
+      description:announcemsg
+    }});
+  });
 }
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: 4
+  permLevel: 0
 };
 
 exports.help = {
