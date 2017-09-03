@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const config = require("../config.json");
 const moment = require("moment");
+const pack = require("../package.json");
 require("moment-duration-format");
 
 exports.run = (client, message, args) => {
@@ -9,7 +10,7 @@ exports.run = (client, message, args) => {
   const botOwner = config.botOwner;
   const duration = moment.duration(client.uptime).format(" D [days], H [hrs], M [mins], S [secs]");
   const embed = new Discord.RichEmbed()
-    .setAuthor(`${bot.username} v1.1`, bot.avatarURL)
+    .setAuthor(`${bot.username} ${pack.version}`, bot.avatarURL)
     .setColor(0x00AE86)
     .setFooter(`Type ${config.prefix}servers to get a full list of servers the bot is in.`)
     .setThumbnail(bot.avatarURL)
