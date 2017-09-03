@@ -17,6 +17,7 @@ exports.run = (client, message, args) => {
       .addField("Pokedex", `\`\`\`${client.commands.filter(c=>c.help.module === "Pokedex").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)} :: ${cmd.help.description}`).join("\n")}\n\`\`\``)
       .setColor(3447003)
     message.author.send({embed});
+    message.author.send(`To add me to your server, use this link -> https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=214695859\nYou can use \`${config.prefix}modules\` command to see a list of all modules.\nYou can use \`${config.prefix}commands ModuleName\`\n(for example \`${config.prefix}commands Fun) to see a list of all of the commands in that module.\nFor a specific command help, use \`${config.prefix}help CommandName\` (for example \`${config.prefix}help 8ball\`)\n\n**LIST OF COMMANDS CAN BE FOUND BY TYPING \`${config.prefix}help\`**\n\nPikaBot Support Server: ${config.serverinvite}`);
     message.author.send({embed: {
       color:4447003,
       description:`Type ${settings.prefix}help <commandname> for details on a specific command.\nType ${settings.prefix}modules for a list of modules.`}});
