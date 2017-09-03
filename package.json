@@ -1,6 +1,6 @@
 {
   "name": "PikaBot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Discord Bot written in Discord.js",
   "engines": {
     "node": "6.10.2"
