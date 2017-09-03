@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
   const botOwner = config.botOwner;
   const duration = moment.duration(client.uptime).format(" D [days], H [hrs], M [mins], S [secs]");
   const embed = new Discord.RichEmbed()
-    .setAuthor(`${bot.username} ${pack.version}`, bot.avatarURL)
+    .setAuthor(`${bot.username} v${pack.version}`, bot.avatarURL)
     .setColor(0x00AE86)
     .setFooter(`Type ${config.prefix}servers to get a full list of servers the bot is in.`)
     .setThumbnail(bot.avatarURL)
