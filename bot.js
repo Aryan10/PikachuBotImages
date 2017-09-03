@@ -2,7 +2,7 @@ const settings = require("./config.json")
 module.exports = message => {
   let client = message.client;
   if (message.author.bot) return;
-  if (message.channel.type === "dm") return message.reply("Commands are not usable in DM.");
+  if (message.channel.type === "dm") return message.reply(`Commands are not usable in DM.\nType \`${config.prefix}h\` in a server for help.`);
   if (message.channel.type === "group") return;
   if (!message.content.startsWith(settings.prefix)) return;
   let command = message.content.split(' ')[0].slice(settings.prefix.length);
