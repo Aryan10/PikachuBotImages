@@ -3,6 +3,7 @@ const config = require("../config.json");
 
 exports.run = (client, message, args) => {
   const question = message.content.split(" ").slice(1).join(" ");
+  if (!question) return;
   const answer = ["Yes", "No", "Ask me again later", "It is uncertain", "Most definitely yes", "Don't count on it", "For sure", "Most likely no", "Probably not", "Maybe", "Don't even think about it", "Not sure", "Perhaps", "Ah I see it, yes", "My sources say no", "Outlook good", "My sources say yes"]
   var random = Math.floor(Math.random()*answer.length);
   const embed = new Discord.RichEmbed()
