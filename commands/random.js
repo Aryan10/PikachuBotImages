@@ -1,7 +1,7 @@
 exports.run = (client, message, args) => {
 
-var shiny = Math.floor(Math.random() * 16);
-if(shiny == 10) {
+var shiny = Math.floor(Math.random() * 8);
+if(shiny == 4) {
 shinyzer='xy-animated-shiny'
 msg='Wow, you are lucky, you got a Shiny Pokemon.'
 }else {
