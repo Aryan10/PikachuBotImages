@@ -1,7 +1,7 @@
 exports.run = (client, message, args) => {
   let params = message.content.toLowerCase().split(" ").slice(1);
   let [width, height] = params.join(" ").replace(/ /g, "").split("x");
-  let str;
+  let str = "Placeholder for " + width + " x " + height;
   if (!height) {
     [width, height] = [width, "100"];
     str = "Specify the height with width. `width x height`";
@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
     str = "Specify the width and height like this `width x height`.";
   }
   const img = `http://via.placeholder.com/${width}x${height}`;
-  message.channel.send(str, {files: `${img}.png`});
+  message.channel.send(str, {files: [`${img}.png`]});
   
 }
 
