@@ -1,5 +1,6 @@
 exports.run = (client, message, args) => {
 const pkmn = message.content.toLowerCase().split(" ").slice(1).join(" ");
+if (!pkmn) return;
 message.channel.send({file: `https://raw.githubusercontent.com/Touched/pokedex-data/master/data/${pkmn}/sprite.png`});
 message.channel.send({file: `https://raw.githubusercontent.com/Touched/pokedex-data/master/data/${pkmn}/icon.png`});
 }
