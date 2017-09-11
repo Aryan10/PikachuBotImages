@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
   let [a1, a2] = num.join(" ").replace(/ /g, "").replace(/+/g, "").split("-");
   let str;
   if (!a2) {
-    [a1, a2] = ["1", a2]
+    [a1, a2] = ["1", a1]
   }
   if (!a1) {
     [a1, a2] = ["1", "100"]
