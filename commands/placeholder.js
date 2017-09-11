@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
     str = "Specify the width and height like this `width x height`.";
   }
   const img = `http://via.placeholder.com/${width}x${height}`;
-  message.channel.send(str, {file: `${img}.png`});
+  message.channel.send(str, {files: `${img}.png`});
   
 }
 
