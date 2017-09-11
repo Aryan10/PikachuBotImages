@@ -1,6 +1,7 @@
 exports.run = (client, message, args) => {
 
 let pmdicon = message.content.toLowerCase().split(' ').slice(1).join(" ");
+if (!pmdicon) return;
 message.channel.send({file: `http://www.pokestadium.com/assets/img/sprites/misc/pmd2/${pmdicon}.png`});
 }
 
