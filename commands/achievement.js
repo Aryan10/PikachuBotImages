@@ -2,7 +2,8 @@ const snekfetch = require('snekfetch');
 
 exports.run = (client, message, args) => {
   const params = message.content.split(' ').slice(1)
-  let [title, contents] = params.join(" ").split("|");
+  let [title, contents] = params.join(" ").split("| ");
+  if (!title) return;
   if(!contents) {
     [title, contents] = ["Achievement", title];
   }
