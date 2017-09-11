@@ -7,6 +7,7 @@ const channel = message.channel;
 const msg = message.content;
 const author = message.author;
 if(message.author.id !== config.botOwner) return message.reply ('you are not my owner!');
+if (!args[0]) return;
 const clean = text => {
 if (typeof(text) === "string") {
 return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
