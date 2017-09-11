@@ -1,7 +1,7 @@
 exports.run = (client, message, args) => {
   let params = message.content.toLowerCase().split(" ").slice(1);
   let [width, height] = params.join(" ").replace(/ /g, "").split("x");
-  let str = "Placeholder for " + width + " x " + height;
+  let str = "Placeholder for " + width + "×" + height;
   if (!height) {
     [width, height] = [width, "100"];
     str = "Specify the height with width. `width x height`";
