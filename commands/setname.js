@@ -3,7 +3,8 @@ const config = require('../config.json');
 if(message.author.id !== config.botOwner) return message.reply('you are not my owner!!!');
 let doit = message.content.split(" ").slice(1);
 let pikapi = doit.join(" ");
-message.reply('New Name Set!');
+if (!pikapi) return;
+message.reply('New Name Set: ' + pikapi);
 client.user.setUsername(pikapi);
 }
 
