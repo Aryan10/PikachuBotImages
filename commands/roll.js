@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
   let num = message.content.split(" ").slice(1);
-  let [a1, a2] = num.join(" ").replace(/ /g, "").replace(/+/g, "").split("-");
+  let [a1, a2] = num.join(" ").replace(/ /g, "").split("-");
   let str;
   if (!a2) {
     [a1, a2] = ["1", a1]
