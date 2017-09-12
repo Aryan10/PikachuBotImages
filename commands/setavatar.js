@@ -3,6 +3,7 @@ const config = require('../config.json');
 let newavatartime = message.content.split(" ").slice(1);
 let blasty = newavatartime.join(" ");
 if(message.author.id !== config.botOwner) return message.reply('you are not my owner!!!');
+if (!blasty) return;
 if(!blasty.startsWith('http')){
 message.reply(`New Avatar Set : ./images/avatar/${blasty}.png`);
 client.user.setAvatar(`./images/${blasty}.png`);
