@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
     [a1, a2] = ["1", "100"]
   }
  if (isNaN(a1) || isNaN(a2)) return message.reply("Please use numbers only.");
- message.reply('You rolled :game_die:' + Math.floor(Math.random() * a2) + Number(a1)).then(m=>m.react('🎲'));
+ message.reply('You rolled :game_die:' + Math.floor(Math.random() * a2) + parseInt(a1)).then(m=>m.react('🎲'));
 };
 
 exports.conf = {
