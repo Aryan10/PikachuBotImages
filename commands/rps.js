@@ -22,13 +22,13 @@ exports.run = (client, message, args) => {
   }else if (choice === "paper") {
   emoji = emoji_paper;
   }else {
-  emoji = "";
+  emoji = "❔";
   }
-  if (mychoice === "rock") {
+  if (mychoice === "Rock") {
   my_emoji = emoji_rock;
-  }else if (mychoice === "scissor") {
+  }else if (mychoice === "Scissor") {
   my_emoji = emoji_scissor;
-  }else if (mychoice === "paper") {
+  }else if (mychoice === "Paper") {
   my_emoji = emoji_paper;
   }
   if (choice === mychoice.toLowerCase()) {
