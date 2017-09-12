@@ -3,7 +3,8 @@ const config = require('../config.json');
 let game = message.content.split(' ').slice(1)
 let playing = game.join(' ')
 if(message.author.id === config.botOwner){
-message.reply("New Game Set");
+if (!playing) return;
+message.reply("New Game Set: " + playing);
 client.user.setGame(playing)
 }else {
 message.reply("I only follows my master's command.")
