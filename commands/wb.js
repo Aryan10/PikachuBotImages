@@ -1,7 +1,10 @@
 exports.run = (client, message, args) => {
-const Discord = require('discord.js');
-message.delete(1)
-message.channel.createWebhook(`${client.user.username} Assistant`, `./images/avatar/pikachu_kanto.png`).then(wb => new Discord.WebhookClient(wb.id, wb.token).send(message.content.split(" ").slice(1).join(" ")));
+  const Discord = require('discord.js');
+  if (!args[0]) return;
+  message.delete(1)
+  let wbname = `${client.user.username}'s Assistant`;
+  let wbav = "../images/avatar/pikachu_kanto.png";
+  message.channel.createWebhook(wbname, wbav).then(hook => hook.edit(wbname, wbav)).then(wb => new Discord.WebhookClient(wb.id, wb.token).send(message.content.split(" ").slice(1).join(" ")));
 }
 
 exports.conf = {
