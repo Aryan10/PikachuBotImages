@@ -1,5 +1,6 @@
 exports.run = (client, message, args) => {
     let msg = message.content.split(" ").slice(1).join(" ");
+    if (!msg) return;
     message.delete(1);
     return message.channel.send(msg);
 }
