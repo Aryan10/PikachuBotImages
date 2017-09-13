@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = (oldch, newch) => {
   const channel = oldch;
+  const channel = oldch.guild;
   if (oldch.type !== "text" || newch.type !== "text") return;
   if (oldch.name !== newch.name) {
     const embed = new Discord.RichEmbed()
@@ -19,7 +20,7 @@ module.exports = (oldch, newch) => {
   }
   let log = channel.guild.channels.find("name.inclides()", "log");
   if (!log) {
-    if (!guild.defaultChannel) return;
+    if (!guild.defaultChannel) return console.log("undefined guild.defaultChannel in " + guild.name);
     log = guild.defaultChannel;
   }
   log.send({embed});
