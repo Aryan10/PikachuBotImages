@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = (oldch, newch) => {
   const channel = oldch;
-  const channel = oldch.guild;
+  const guild = oldch.guild;
   if (oldch.type !== "text" || newch.type !== "text") return;
   if (oldch.name !== newch.name) {
     const embed = new Discord.RichEmbed()
