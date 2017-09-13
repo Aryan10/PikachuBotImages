@@ -20,7 +20,7 @@ fs.readdir('./commands/', (err, files) => {
   log(`Loading a total of ${files.length} commands.`);
   files.forEach(f => {
     let props = require(`./commands/${f}`); 
-    log(`Loading Command: ${props.help.name}. 👌`);
+    log(`Loading Command: ${props.help.name}`);
     client.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
@@ -34,7 +34,7 @@ fs.readdir('./modules/', (err, modules) => {
   log(`Loading a total of ${modules.length} modules.`);
   modules.forEach(m => {
     let loadData = require(`./modules/${m}`); 
-    log(`Loading Module: ${loadData.moduledata.name}. 👌`);
+    log(`Loading Module: ${loadData.moduledata.name}`);
     client.modules.set(loadData.moduledata.name, loadData);
   });
 });
@@ -44,6 +44,7 @@ fs.readdir('./events/', (err, events) => {
   log(`Loading a total of ${events.length} events.`);
   events.forEach(e => {
     let loadData = require(`./events/${e}`);
+    log(`Loading Event: ${e}`);
   });
 });
 
