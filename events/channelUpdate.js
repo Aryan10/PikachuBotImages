@@ -22,3 +22,4 @@ module.exports = (oldch, newch) => {
     log = guild.defaultChannel;
   }
   log.send({embed});
+};
