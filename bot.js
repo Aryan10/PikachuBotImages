@@ -4,6 +4,15 @@ module.exports = message => {
   if (message.author.bot) return;
   if (message.channel.type === "dm") return message.reply(`Commands are not usable in DM.\nType \`${config.prefix}h\` in a server for help.`);
   if (message.channel.type === "group") return;
+  
+/* Pokémon Flame Yellow Exclusive */
+
+if (message.channel.id === "323690694742900748") {
+  message.react(message.guild.emojis.get("357348246881828864"));
+  message.react(message.guild.emojis.get("357348246483370006"));
+}
+
+/* Main Code */
   if (!message.content.startsWith(settings.prefix)) return;
   let command = message.content.split(' ')[0].slice(settings.prefix.length);
   let args = message.content.split(' ').slice(1);
