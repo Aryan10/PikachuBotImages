@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports = (oldch, newch) => {
+  const channel = oldch;
   if (oldch.type !== "text" || newch.type !== "text") return;
   if (oldch.name !== newch.name) {
     const embed = new Discord.RichEmbed()
