@@ -18,7 +18,7 @@ module.exports = (oldch, newch) => {
       .addField("New Name", newch.topic)
       .setTimestamp();
   }
-  let log = channel.guild.channels.find("name.inclides()", "log");
+  let log = channel.guild.channels.find("name.includes()", "log");
   if (!log) {
     if (!guild.defaultChannel) return console.log("undefined guild.defaultChannel in " + guild.name);
     log = guild.defaultChannel;
