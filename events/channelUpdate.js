@@ -24,7 +24,7 @@ module.exports = (oldch, newch) => {
       .setTimestamp()
       .setFooter(" ", guild.iconURL);
   }
-  let log = channel.guild.channels.find("name.includes()", "log");
+  let log = guild.channels.filter(c=>c.name.toLowerCase().includes("log")).first();
   if (!log) {
     if (!guild.defaultChannel) return console.log("undefined guild.defaultChannel in " + guild.name);
     log = guild.defaultChannel;
