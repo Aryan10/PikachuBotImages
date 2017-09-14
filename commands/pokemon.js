@@ -2,7 +2,7 @@ exports.run = (client, message, args) => {
 
   let sprite = message.content.toLowerCase().split(' ').slice(1).join(" ");
   if (!sprite) return;
-  if (sprite.isNaN()) {
+  if (sprite.isNaN) {
     message.channel.send({files: [`http://www.pokestadium.com/sprites/xy/${sprite.replace(/ /g,'-')}.gif`]});
   }else {
     message.channel.send("Coming soon.");
