@@ -10,7 +10,7 @@ module.exports = (oldch, newch) => {
       .setTitle("Channel Name Changed")
       .addField("Old Name", oldch.name)
       .addField("New Name", newch.name)
-      .setColor(3447003);
+      .setColor(3447003)
       .setTimestamp()
       .setFooter(" ", guild.iconURL);
   }
