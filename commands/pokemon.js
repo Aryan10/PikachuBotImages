@@ -3,9 +3,9 @@ exports.run = (client, message, args) => {
   let sprite = message.content.toLowerCase().split(' ').slice(1).join(" ");
   if (!sprite) return;
   if (sprite.isNaN()) {
-    message.channel.send({files: [`https://play.pokemonshowdown.com/sprites/xyani/${sprite.replace(/ /g,'-')}.gif`]});
+    message.channel.send({files: [`http://www.pokestadium.com/sprites/xy/${sprite.replace(/ /g,'-')}.gif`]});
   }else {
-    message.channel.send("Coming soon");
+    message.channel.send("Coming soon.");
   }
 }
 
