@@ -1,8 +1,14 @@
 module.exports = channel => {
-if (channel.type !== "text") return;
-channel.guild.defaultChannel.send({embed: {
-color:3447003,
-title:'New Channel Created',
-description:`Name: **${channel.name}**\nID: **${channel.id}**`
-}});
+  const guild = channel.guild;
+  if (channel.type !== "text") return;
+  let log = guild.channels.find("name.includes()", "log");
+  if (!log) {
+    if (!guild.defaultChannel) return;
+    log = guild.defaultChannel;
+  }
+  log.send({embed: {
+    color:3447003,
+    title:'New Channel Created',
+    description:`Name: **${channel.name}**\nID: **${channel.id}**`
+  }});
 }
