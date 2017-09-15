@@ -100,11 +100,11 @@ msg=`\nMeet ${member.user.tag}, the luckiest person ever!\n\n:clipboard:*Total m
   .setThumbnail(member.user.displayAvatarURL)
   .setFooter(`User Join`)
   .setTimestamp()
-  let ch = guild.channels.filter(c=>c.name.includes("welcome").first();
+  let ch = guild.channels.filter(c=>c.name.includes("welcome")).first();
   if (!ch) {
-    ch = guild.channels.filter(c=>c.name.includes("greet").first();
+    ch = guild.channels.filter(c=>c.name.includes("greet")).first();
     if (!ch) {
-      ch = guild.channels.filter(c=>c.name.includes("join").first();
+      ch = guild.channels.filter(c=>c.name.includes("join")).first();
       if (!ch) return;
     }
   }
