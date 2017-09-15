@@ -31,7 +31,9 @@ exports.run = (client, message, args) => {
     .addField("Joined Discord", mention.createdAt)
     .addField("Status", `${capitalizeFirstLetter(mention.presence.status)}\n_Playing_ ${game}`)
     .addField("Bot", isBot)
-    .addField(`Roles [${target.roles.size}]`, target.roles.map(r=>r.name).join(", "));
+    .addField(`Roles [${target.roles.size}]`, target.roles.map(r=>r.name).join(", "))
+    .setFooter(client.user.username, client.user.avatarURL)
+    .setTimestamp();
 message.channel.send({embed});
 };
 
