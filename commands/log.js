@@ -16,7 +16,7 @@ exports.conf = {
 
 exports.help = {
   name: 'log', 
-  description: 'Logs something to bot's console.', 
+  description: 'Logs something to bot\'s console.', 
   usage: 'log [message]', 
   module: 'Admin', 
   permit: 'Bot Owner Only', 
