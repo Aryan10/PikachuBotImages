@@ -13,6 +13,7 @@ const embed = new Discord.RichEmbed()
 .addField("Channels", `${guild.channels.size} Total\n${guild.channels.filter(c=>c.type === "text").size} Text | ${guild.channels.filter(c=>c.type === "voice").size} Voice\n__Default Channel__: **${guild.defaultChannel.name}**`)
 .addField("Roles", `${guild.roles.size} Total`)
 .addField("Region", capitalizeFirstLetter(guild.region))
+.addField("Emojis", `${guild.emojis.size} Total`)
 .addField("Created On", guild.createdAt);
 message.channel.send({embed});
 };
