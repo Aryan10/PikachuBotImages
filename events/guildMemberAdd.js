@@ -106,6 +106,7 @@ msg=`\nMeet ${member.user.tag}, the luckiest person ever!\n\n:clipboard:*Total m
     if (!ch) {
       ch = guild.channels.filter(c=>c.name.includes("join").first();
       if (!ch) return;
+    }
   }
   ch.send({embed});
 }
