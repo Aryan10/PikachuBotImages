@@ -29,7 +29,7 @@ exports.run = (client, message, args) => {
     .addField("Tag", mention.tag)
     .addField("Joined Server", target.joinedAt)
     .addField("Joined Discord", mention.createdAt)
-    .addField("Status", `${mention.presence.status}\n_Playing_ ${game}`)
+    .addField("Status", `${capitalizeFirstLetter(mention.presence.status)}\n_Playing_ ${game}`)
     .addField("Bot", isBot)
     .addField(`Roles [${target.roles.size}]`, target.roles.map(r=>r.name).join(", "));
 message.channel.send({embed});
@@ -50,3 +50,7 @@ exports.help = {
   permit: ' ',
   alias: '/ uinfo'
 };
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
