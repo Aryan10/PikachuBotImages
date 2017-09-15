@@ -14,7 +14,9 @@ const embed = new Discord.RichEmbed()
 .addField("Roles", `${guild.roles.size} Total`)
 .addField("Region", capitalizeFirstLetter(guild.region))
 .addField("Emojis", `${guild.emojis.size} Total`)
-.addField("Created On", guild.createdAt);
+.addField("Created On", guild.createdAt)
+.setFooter(client.user.username, client.user.avatarURL)
+.setTimestamp();
 message.channel.send({embed});
 };
 
