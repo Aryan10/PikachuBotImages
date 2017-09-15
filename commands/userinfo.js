@@ -15,12 +15,12 @@ const embed = new Discord.RichEmbed()
 .setThumbnail(mention.avatarURL)
 .setColor(4447003)
 .addField("User ID", mention.id)
-.addField("Name", `${target.displayName}(${mention.tag})`)
+.addField("Name", `${target.displayName}`)
 .addField("Joined Server", target.joinedAt)
 .addField("Joined Discord", mention.createdAt)
 .addField("Status", mention.presence.status)
-.addField("Discrim", mention.discriminator)
-.addField("Bot", mention.bot);
+.addField("Tag", mention.tag)
+.addField(`Roles [${target.roles.size}]`, target.roles.map(r=>r.name).join(", "));
 message.channel.send({embed});
 };
 
