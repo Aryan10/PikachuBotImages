@@ -7,10 +7,12 @@ exports.run = (client, message, args) => {
     mention = message.author;
     target = message.member;
   }
-  let game = mention.presence.game.name;
-  if (!game) {
+  let game;
+  if (mention.presence.game.name === null) {
     game = "*Nothing*"
-  };
+  }else {
+    game = mention.presence.game.name;
+  }
   let isBot = mention.bot;
   if (isBot) {
     isBot = "Yes";
