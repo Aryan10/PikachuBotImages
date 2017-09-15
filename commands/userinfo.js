@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
     target = message.member;
   }
   let game;
-  if (mention.presence.game.name === null) {
+  if (mention.presence.game === null) {
     game = "*Nothing*"
   }else {
     game = mention.presence.game.name;
