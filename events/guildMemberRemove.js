@@ -40,7 +40,10 @@ module.exports = member => {
   .setThumbnail(member.user.displayAvatarURL)
   .setFooter(`User Leave`)
   .setTimestamp()
-  const welcome_goodbye = guild.channels.find('name',"welcome_goodbye")
-  if(!welcome_goodbye) return;
-  welcome_goodbye.send({embed});									    
+  let ch = guild.channels.filter(c=>c.name.includes("bye")).first();
+  if (!ch) {
+    ch = guild.channels.filter(c=>c.name.includes("leave")).first();
+    if (!ch) return;
+  }
+  ch.send({embed});								    
 }
