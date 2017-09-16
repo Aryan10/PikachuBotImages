@@ -2,17 +2,17 @@ const config = require("../config.json");
 
 exports.run = (client, message, args) => {
   if (message.author.id !== config.botOwner) return message.reply("this command can be used by bot owner only.");
-  let params = message.content.toLowerCase().split(" ").slice(1);
+  let params = message.content.toLowerCase().split(" ").slice(1).join(" ");
   let guild = message.guild;
   let user = message.mentions.users.first();
   let member = message.mentions.members.first();
-  if (params === "guildmemberadd") {
+  if (params.includes("guildmemberadd")) {
     client.emit("guildMemberAdd", member);
-  }else if (params === "guildmemberremove" || params === "kick") {
+  }else if (params.includes("guildmemberremove") || params.includes("kick")) {
     client.emit("guildMemberRemove", member)
-  }else if (params === "guildbanadd" || params === "ban") {
+  }else if (params.includes("guildbanadd") || params.includes("ban")) {
     client.emit("guildBanAdd", guild, user)
-  }else if (params === "guildbanremove") {
+  }else if (params.includes("guildbanremove")) {
     client.emit("guildBanRemove", guild, user)
   }else {
     message.reply('Not supported event yet,\n\nSupported Events: `guildMemberAdd, guildMemberRemove, guildBanAdd, guildBanRemove');
