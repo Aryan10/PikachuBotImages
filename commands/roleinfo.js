@@ -37,7 +37,7 @@ exports.run = (client, message, args) => {
     .addField("Bot Role", botrole)
     .addField("Members", role.members.map(m=>m.displayName).join(", "))
     .addField("Created At", role.createdAt)
-    .setFooter(client.user.username, client.user.avatarURl)
+    .setFooter(client.user.username, client.user.avatarUR)
     .setTimestamp();
   message.channel.send({embed});
 }
