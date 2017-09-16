@@ -5,6 +5,12 @@ let params = message.content.split(" ").slice(1).join(" ");
 if (message.author.id === config.botOwner && client.guilds.find("name", params)) {
 guild = client.guilds.find("name", params);
 }
+let ch;
+if (!guild.defaultChannel) {
+ch = "_None_";
+}else {
+ch = guild.defaultChannel.name;
+}
 const Discord = require("discord.js");
 const embed = new Discord.RichEmbed()
 .setColor(3447003)
