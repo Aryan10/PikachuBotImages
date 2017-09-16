@@ -26,6 +26,10 @@ exports.run = (client, message, args) => {
   }else {
     botrole = "No";
   }
+  let m_map = role.members.map(m=>m.displayName).join(", ");
+  if (m_map === "") {
+    m_map = "_None_";
+  }
   
   const embed = new Discord.RichEmbed()
     .setAuthor(role.name, guild.iconURL)
@@ -35,7 +39,7 @@ exports.run = (client, message, args) => {
     .addField("Visible (Hoist)", hoist)
     .addField("Mentionable", mention)
     .addField("Bot Role", botrole)
-    .addField("Members", role.members.map(m=>m.displayName).join(", "))
+    .addField("Members", m_map)
     .addField("Created At", role.createdAt)
     .setFooter(client.user.username, client.user.avatarUR)
     .setTimestamp();
