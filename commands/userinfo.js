@@ -3,9 +3,14 @@ const Discord = require("discord.js");
 exports.run = (client, message, args) => {
   let mention = message.mentions.users.first();
   let target = message.mentions.members.first();
+  let params = message.content.split(" ").slice(1).join(" ");
   if (mention === undefined) {
     mention = message.author;
     target = message.member;
+    if (client.users.find("name", params) && message.guild.members.find("name", params)) {
+      mention = client.users.find("name", params);
+      target = message.guild.members.find("name", params);
+    }
   }
   let game;
   if (mention.presence.game === null) {
