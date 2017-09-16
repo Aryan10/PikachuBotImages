@@ -8,7 +8,6 @@ exports.run = (client, message, args) => {
     role = guild.roles.find("name", params);
     if (!role) return message.reply("Please specify a valid role name or mention a role.\n_Type `" + config.prefix + "role` for a list of roles in this server.");
   }
-  let role = guild.roles.find("name", "Red");
   let hoist = "null";
   if (role.hoist) {
     hoist = "Yes";
