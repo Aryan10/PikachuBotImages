@@ -28,8 +28,8 @@ exports.conf = {
 }
 
 exports.help = {
-  name: 'excute', 
-  description: 'Excutes an event.', 
+  name: 'execute', 
+  description: 'Executes an event.', 
   usage: 'excute <event> [mention]', 
   module: 'Admin', 
   permit: 'Bot Owner Only', 
