@@ -1,6 +1,5 @@
 exports.run = (client, message, args) => {
 const config = require("../config.json");
-const guild = message.guild;
 let guild = message.guild;
 let params = message.content.toLowerCase().split(" ").slice(1).join(" ");
 if (message.author.id === config.botOwner && client.guilds.find("name", params)) {
