@@ -7,9 +7,9 @@ exports.run = (client, message, args) => {
   if (mention === undefined) {
     mention = message.author;
     target = message.member;
-    if (client.users.find("name", params) && message.guild.members.find("name", params)) {
-      mention = client.users.find("name", params);
-      target = message.guild.members.find("name", params);
+    if (message.guild.members.find("displayName", params)) {
+      mention = message.guild.members.find("displayName", params).user;
+      target = message.guild.members.find("displayName", params);
     }
   }
   let game;
