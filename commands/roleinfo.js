@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
   let role = message.mentions.roles.first();
   if (role === undefined) {
     role = guild.roles.find("name", params);
-    if (!role) return message.reply("Please specify a valid role name or mention a role.\n_Type `" + config.prefix + "role` for a list of roles in this server.");
+    if (!role) return message.reply("Please specify a valid role name or mention a role.\n_Type `" + config.prefix + "roles` for a list of roles in this server._");
   }
   let hoist = "null";
   if (role.hoist) {
@@ -35,7 +35,7 @@ exports.run = (client, message, args) => {
     .addField("Visible (Hoist)", hoist)
     .addField("Mentionable", mention)
     .addField("Bot Role", botrole)
-    .addField("Members", role.members.map(m=>m.displayName).join("\n"))
+    .addField("Members", role.members.map(m=>m.displayName).join(", "))
     .addField("Created At", role.createdAt)
     .setFooter(client.user.username, client.user.avatarURl)
     .setTimestamp();
