@@ -55,5 +55,5 @@ exports.help = {
   usage: 'roleinfo <role mention or role name>', 
   module: 'Other', 
   permit: ' ', 
-  alias: 'rinfo'
+  alias: '/ rinfo'
 }
