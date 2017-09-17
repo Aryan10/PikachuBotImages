@@ -1,7 +1,7 @@
 exports.run = (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You don't have the permission to clear reactions from messages.");
   if (!parseInt(args[0],10)) return message.reply(`Please provide a number of messages to clean reactions from!`);
-  message.channel.messages.fetch({limit:parseInt(args[0],10)}).then(msg => {
+  message.channel.fetchMessages({limit:parseInt(args[0],10)}).then(msg => {
     message.channel.send("Clearning reactions from this channel for " + args[0] + "messages...");
     msg.forEach(mesg => mesg.clearReactions());
   });
