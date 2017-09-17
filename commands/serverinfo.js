@@ -11,6 +11,12 @@ ch = "_None_";
 }else {
 ch = guild.defaultChannel.name;
 }
+let verlvltxt = message.guild.verificationLevel;
+if (verlvltxt == 0) verlvltxt = "None";
+if (verlvltxt == 1) verlvltxt = "Must have verified email on the Discord account.";
+if (verlvltxt == 2) verlvltxt = "Must be registered on Discord for longer than 5 mins.";
+if (verlvltxt == 3) verlvltxt = "Must be member of this server for longer than 10 mins.";
+if (verlvltxt == 4) verlvltxt = "Must have a phone verified on their discord account.";
 const Discord = require("discord.js");
 const embed = new Discord.RichEmbed()
 .setColor(3447003)
@@ -24,6 +30,7 @@ const embed = new Discord.RichEmbed()
 .addField("Roles", `${guild.roles.size} Total`)
 .addField("Region", capitalizeFirstLetter(guild.region))
 .addField("Emojis", `${guild.emojis.size} Total`)
+.addField("Verification Level", verlvltxt)
 .addField("Created On", guild.createdAt)
 .setFooter(client.user.username, client.user.avatarURL)
 .setTimestamp();
