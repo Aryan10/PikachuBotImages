@@ -5,6 +5,8 @@ const chalk = require("chalk");
 const moment = require("moment");
 const config = require("./config.json");
 
+if(process.version.slice(1).split('.')[0]<8) throw new Error('Node 8.0.0 or higher is required. Update Node on your system.');
+
 require("./util/eventLoader.js")(client);
 
 client.login(process.env.TOKEN);
