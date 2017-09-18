@@ -39,6 +39,6 @@ exports.help = {
   description: 'Clears X number of messages.',
   usage: 'clear [number]',
   module: 'Admin',
-  permit: 'Requires Manage Messages',
+  permit: 'Requires Manage Messages Server Permission',
   alias: '/ clr / prune / purge'
 };
