@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
   const duration = moment.duration(client.uptime).format(" D [days], H [hrs], M [mins], S [secs]");
   
   fs.readdir('./', (err, files) => {
-    fs.readdir('./', (errmdls, file) => {
+    fs.readdir('../modules/', (errmdls, file) => {
   const embed = new Discord.RichEmbed()
     .setAuthor(`${bot.username} v${pack.version}`, bot.avatarURL)
     .setColor(0x00AE86)
