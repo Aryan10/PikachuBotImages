@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
   }
   if (!member.kickable) return message.channel.send(`You cant ban **${member.user.username}**.`);
   let banreason = message.content.split(" ").slice(2).join(" ");
-  if (!banreason) reason = "Unknown!";
+  if (!banreason) banreason = "Unknown!";
   member.send("You have been banned from **" + guild.name + "**\n\n__Reason__: " + ban);
   member.ban(banreason);
   // embed //
