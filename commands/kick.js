@@ -32,6 +32,6 @@ exports.help = {
   description: 'Kicks a mentioned user.', 
   usage: 'kick [mention] <reason>', 
   module: 'Admin', 
-  permit: 'Requires Kick Member', 
+  permit: 'Requires Kick Member Server Permission', 
   alias: '/ k'
 }
