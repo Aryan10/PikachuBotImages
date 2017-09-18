@@ -11,8 +11,8 @@ exports.run = (client, message, args) => {
   const botOwner = config.botOwner;
   const duration = moment.duration(client.uptime).format(" D [days], H [hrs], M [mins], S [secs]");
   
-  fs.readdir('../commands/', (err, cmds) => {
-    fs.readdir('../modules/', (err, mdls) => {
+  fs.readdir('./', (err, files) => {
+    fs.readdir('./', (errmdls, file) => {
   const embed = new Discord.RichEmbed()
     .setAuthor(`${bot.username} v${pack.version}`, bot.avatarURL)
     .setColor(0x00AE86)
@@ -24,7 +24,7 @@ exports.run = (client, message, args) => {
     .addField("Presence", `${client.guilds.size} Servers\n${client.channels.size} Channels\n${client.users.size} Users`)
     .addField("Uptime", duration)
     .addField("Memory Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`)
-    .addField("Bot Info", `${cmds.length} Commands\n${mdls.length} Modules`)
+    .addField("Bot Info", `${files.length} Commands\n${file.length} Modules`)
     .addField("Statistics", `DiscordJs v${Discord.version}\nNodeJs ${process.version}`);
   message.channel.send({embed});
     });
