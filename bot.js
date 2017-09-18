@@ -1,8 +1,14 @@
 const settings = require("./config.json")
 module.exports = message => {
   let client = message.client;
-  if (message.author.bot) return;
-  if (message.channel.type === "dm") return message.reply(`Commands are not usable in DM.\nType \`${config.prefix}h\` in a server for help.`);
+  if (message.author === client.user || message.author.bot) return;
+  const reply = {
+    "<@318700956244115457>": "Prefix here is `" + settings.prefix + "`"
+  }
+  if (reply[message.content]) {
+    message.channel.send(reply[message.content]);
+  }
+  if (message.channel.type === "dm") return message.reply(`Commands are disabled in DM for now.\nType \`${config.prefix}h\` in a server for help.`);
   if (message.channel.type === "group") return;
   
 /* Pokémon Flame Yellow Exclusive */
