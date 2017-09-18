@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
   let banreason = message.content.split(" ").slice(2).join(" ");
   if (!banreason) banreason = "Unknown!";
   member.send("You have been banned from **" + guild.name + "**\n\n__Reason__: " + ban);
-  member.ban(banreason);
+  member.ban({days : 7, reason : banreason});
   // embed //
   const embed = new Discord.RichEmbed()
     .setColor(0x595959)
