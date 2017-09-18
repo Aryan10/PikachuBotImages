@@ -6,6 +6,7 @@ exports.run = (client, message, args) => {
     .setTitle("List Of Roles")
     .setColor(3447003)
     .setDescription(message.guild.roles.map(r=>r.name).join(", "));
+  if (embed.description.length > 1998) return message.reply("**Discord API Error**\nCan't send large messages.");
   message.channel.send({embed});
 };
 
