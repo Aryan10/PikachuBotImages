@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
   if (!member) {
     return message.reply('Invalid command usage, you must mention to ban someone.');
   }
-  if (!member.kickable) return message.channel.send(`You cant ban **${member.user.username}**.`);
+  if (!member.kickable || !member.bannable) return message.channel.send(`You cant ban **${member.user.username}**.`);
   let banreason = message.content.split(" ").slice(2).join(" ");
   if (!banreason) banreason = "Unknown!";
   member.send("You have been banned from **" + guild.name + "**\n\n__Reason__: " + ban);
