@@ -28,8 +28,10 @@ exports.run = (client, message, args) => {
     if (client.commands.has(command)) {
       command = client.commands.get(command);
     }else if (client.aliases.has(command)) {
-      command = client.aliases.get(command);
-    };
+      command = client.commands.get(client.aliases.get(command));
+    }else {
+      return message.reply("Can't find that command.");
+    }
       const cmdhelp = new Discord.RichEmbed()
       .setColor(4447003)
       .setDescription(`\`${settings.prefix}${command.help.name} ${command.help.alias}\`\n${command.help.description}\n**${command.help.permit}**`)
