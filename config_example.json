@@ -12,6 +12,7 @@ Example - [id1, id2, id3]*/
 /* other bot info */
 "status": "online",
 "game": "",
+"streaming": true,
 "streamingurl": "",
 
 /* bot's official server invite */
