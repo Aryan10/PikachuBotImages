@@ -26,9 +26,9 @@ exports.run = (client, message, args) => {
     .addField("Memory Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`)
     .addField("Bot Info", `${cmds.length} Commands\n${mdls.length} Modules`)
     .addField("Statistics", `DiscordJs v${Discord.version}\nNodeJs ${process.version}`);
+  message.channel.send({embed});
     });
   });
-  message.channel.send({embed});
 };
 
 exports.conf = {
