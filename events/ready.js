@@ -4,11 +4,11 @@ module.exports = client => {
 
 console.log(`Ready to server in ${client.channels.size} channels on ${client.guilds.size} servers, for a total of ${client.users.size} users.`);
 
-let streaming = true;
+let streaming = pikabot.streaming;
 client.user.setStatus(pikabot.status);
 
 if (streaming === true) {
-client.user.setGame(pikabot.game, pikabot.streamingurl);
+client.user.setGame(`${pikabot.prefix}h for help | ${client.guilds.size} Servers` , pikabot.streamingurl);
 } else {
 client.user.setGame(pikabot.game)
 }	
