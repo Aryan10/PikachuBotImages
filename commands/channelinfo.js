@@ -3,7 +3,7 @@ const config = require("../config.json");
 
 exports.run = (client, message, args) => {
   let ch = message.mentions.channels.first();
-  if (ch === undefined) ch = message.guild.channels.find("name", args[0]);
+  if (!ch) ch = message.guild.channels.find("name", args[0]);
   if (!ch) ch = message.channel;
   let topic = ch.topic;
   if (!topic) topic = "No topic set.";
