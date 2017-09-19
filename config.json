@@ -6,7 +6,7 @@
 
 "status": "idle",
 "game": "+h for help",
-"rotategame": false,
+"rotategame": true,
 "rotategametime": 30000,
 "streaming": true,
 "streamingurl": "http://www.twitch.tv/logout",
