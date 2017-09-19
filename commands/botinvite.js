@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
     .setFooter(bot.username, bot.avatarURL)
     .setTimestamp()
     .setColor(3447003)
-    .setDescription(`If you want me in your server, [click here](${config.botinvite})!\n\nIf you want to get latest updates join my [Discord Server](${config.serverinvite}).\n\nI am also on...\n[bots.discord.pw](${botsdiscordpwinvite})\n[discordbots.org](${discordbotsorginvite})\n\n[Click here](${config.githubrepo}) to see my source code.`);
+    .setDescription(`If you want me in your server, [click here](${config.botinvite})!\n\nIf you want to get latest updates join my [Discord Server](${config.serverinvite}).\n\nI am also on...\n[bots.discord.pw](${config.botsdiscordpwinvite})\n[discordbots.org](${discordbotsorginvite})\n\n[Click here](${config.githubrepo}) to see my source code.`);
     message.channel.send({embed});
 };
 
