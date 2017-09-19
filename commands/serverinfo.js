@@ -1,5 +1,6 @@
 const config = require("../config.json");
 const servers = require("../util/servers.json");
+const Discord = require("discord.js");
 
 exports.run = (client, message, args) => {
   let guild = message.guild;
