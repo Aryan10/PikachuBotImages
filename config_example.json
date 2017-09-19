@@ -21,5 +21,10 @@
 // a vaild twitch streaming url here if the game is streaming
 "streamingurl": "",
 
-/* bot's official server invite */
-"serverinvite": ""}
+/* bot's official things */
+"serverinvite": "",
+"botinvite": "",
+"botsdiscordpwinvite": "",
+"discordbotsorginvite": "",
+"githubrepo": ""}
+
