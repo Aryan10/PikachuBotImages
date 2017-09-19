@@ -1,4 +1,5 @@
 const config = require("../config.json");
+const emoji = require("../util/emojis.json");
 exports.run = (client, message, args) => {
   let pong = "Pong?";
   let ping = "Pong!";
@@ -7,7 +8,7 @@ exports.run = (client, message, args) => {
     ping = "Ping!";
   }
   message.channel.send(pong).then(sent => {   
-    sent.edit(`:ping_pong: ${ping}\nLatency :blue_heart: ${sent.createdTimestamp - message.createdTimestamp}ms | API Latency ${client.emojis.get("357348246483370006").toString()} ${Math.round(client.ping)}ms`);
+    sent.edit(`:ping_pong: ${ping}\nLatency :blue_heart: ${sent.createdTimestamp - message.createdTimestamp}ms | API Latency ${client.emojis.get(emoji.fblove).toString()} ${Math.round(client.ping)}ms`);
     sent.react('🏓');
   });
 }
