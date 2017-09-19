@@ -7,7 +7,7 @@ module.exports = client => {
   if (pikabot.rotategame && games.length > 0) {
     setInterval(() => {
       const game = games[~~(Math.random() * games.length)]
-      if (streaming) {
+      if (!streaming) {
         client.user.setGame(game)
       }else {
         client.user.setGame(game, streamingurl);
