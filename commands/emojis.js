@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  guildOnly: true,
   aliases: ['emotes'],
   permLevel: 0
 }
