@@ -6,13 +6,14 @@ exports.run = (client, message, args) => {
   const embed = new Discord.RichEmbed()
     .setColor(0x00FF00)
     .setTitle(`Channel Topic of ${channel.name}`)
-    .setDescription(channel.topic)
+    .setDescription(channel.topic);
+  if (!channel.topic) embed.setDescription("No Topic set.");
   message.channel.send({embed});
 };
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  guildOnly: true,
   aliases: ['ct'],
   permLevel: 0
 };
