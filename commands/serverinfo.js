@@ -37,7 +37,7 @@ const embed = new Discord.RichEmbed()
   
   /* IPT Exclusive */
   if (guild.id === "290162830009696257") {
-    embed.setDescription("__How did this all get started?__\n\n:thinking: :thinking:\nIt was started by __3 Indian Friends__ !!!\nThey made a small group which consists of 5 people and was called __IPT__.\nOur main motive is to connect Indian People who love __Pokémon__. :kissing_smiling_eyes:\n:bookmark:  It was founded on 26th January 2017.");
+    embed.setDescription("**__How did this all get started?__\n\n:thinking: :thinking:\nIt was started by __3 Indian Friends__ !!!\nThey made a small group which consists of 5 people and was called __IPT__.\nOur main motive is to connect Indian People who love __Pokémon__. :kissing_smiling_eyes:**\n:bookmark:  It was founded on 26th January 2017.");
   }
   /* end */
 message.channel.send({embed});
