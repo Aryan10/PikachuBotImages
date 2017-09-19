@@ -40,7 +40,7 @@ exports.run = (client, message, args) => {
     .setFooter(client.user.username, client.user.avatarURL)
     .setTimestamp();
   
-  if (servers[guild.id].desc !== "")  embed.setDescription(servers[guild.id].desc)
+  if (servers[guild.id].desc !== "")  embed.setDescription(servers[guild.id].desc);
   message.channel.send({embed});
 };
 
