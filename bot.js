@@ -1,9 +1,16 @@
-const settings = require("./config.json")
+const settings = require("./config.json");
+const server = require("./util/servers.json");
 module.exports = message => {
   let client = message.client;
+  let prefix = settings.prefix
+  if(message.channel.type !== "dm"){ 
+    if(server[message.guild.id] && server[message.guild.id].prefix !== ""){ 
+      prefix = server[message.guild.id].prefix;
+    }
+  }
   if (message.author === client.user || message.author.bot) return;
   const reply = {
-    "<@318700956244115457>": "Prefix here is `" + settings.prefix + "`"
+    "<@318700956244115457>": "Prefix here is `" + prefix + "`"
   }
   if (reply[message.content]) {
     message.channel.send(reply[message.content]);
