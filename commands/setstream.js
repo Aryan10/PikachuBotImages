@@ -4,7 +4,7 @@ let game = message.content.split(' ').slice(1)
 let playing = game.join(' ')
 if(message.author.id === config.botOwner){
 message.reply("New Game Set");
-client.user.setGame(playing, 'discordapp.com')
+client.user.setGame(playing, 'http://www.twitch.tv/logout')
 }else {
 message.reply("I only follows my master's command.")
 }
