@@ -7,7 +7,7 @@ module.exports = guild => {
   const botOwner = client.users.get(config.botOwner);
   botOwner.send(`Someone invited me in ${guild.name}, I will do my best there.`);
   const embed = new Discord.RichEmbed()
-    .setDescription(`Hello there, I am **${bot.username}**, a Discord.js Bot made by **${botOwner.tag}**.\nType \`${config.prefix}h\` for a list of commands.\nAdditionally, I will send cool welcome and goodbye messages in a channel named #\`welcome_goodbye\`. Be sure to make one if you want embedded greet-and-bye messages.`);
+    .setDescription(`Hello there, I am **${bot.username}**, a Discord.js Bot made by **${botOwner.tag}**.\nType \`${config.prefix}h\` for a list of commands.\nAdditionally, I will send cool welcome and goodbye messages in a channel with some words like "welcome", "greet", "leave" etc. Be sure to make one if you want embedded greet-and-bye messages.`);
   let ch = guild.defaultChannel;
   if (!ch) {
   ch = guild.channels.filter(c=>c.name.toLowerCase().includes("general")).first();
