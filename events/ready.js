@@ -3,7 +3,7 @@ const games = require("../util/games.json");
 module.exports = client => {
   console.log(`Ready to server in ${client.channels.size} channels on ${client.guilds.size} servers, for a total of ${client.users.size} users.`);
   let streaming = pikabot.streaming;
-  let a = `| ${pikabot.prefix} Prefix | ${client.guilds.size} Servers`
+  let a = ` | ${pikabot.prefix} Prefix | ${client.guilds.size} Servers`
   client.user.setStatus(pikabot.status);
   if (pikabot.rotategame && games.length > 0) {
     setInterval(() => {
