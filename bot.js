@@ -12,7 +12,6 @@ module.exports = message => {
   const reply = {
     "<@318700956244115457>": "Prefix here is `" + prefix + "`"
   }
-  if (cmd && message.channel.type !== "text" && cmd.conf.guildOnly) return message.reply('This command is not avaliable in DMs. Please run this command in a server.');
   if (reply[message.content]) {
     message.channel.send(reply[message.content]);
   }
@@ -35,6 +34,7 @@ if (message.channel.id === "323690694742900748") {
   } else if (client.aliases.has(command)) {
     cmd = client.commands.get(client.aliases.get(command));
   }
+  if (cmd && message.channel.type !== "text" && cmd.conf.guildOnly) return message.reply('This command is not avaliable in DMs. Please run this command in a server.');
   if (cmd) {
     if (perms < cmd.conf.permLevel) return;
     cmd.run(client, message, args);
