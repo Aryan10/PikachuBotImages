@@ -1,5 +1,6 @@
 const settings = require("./config.json");
 const server = require("./util/servers.json");
+const emoji = require("./util/emojis.json");
 module.exports = message => {
   let client = message.client;
   let prefix = settings.prefix;
@@ -19,8 +20,8 @@ module.exports = message => {
 /* Pokémon Flame Yellow Exclusive */
 
 if (message.channel.id === "323690694742900748") {
-  message.react(message.guild.emojis.get("357348246881828864"));
-  message.react(message.guild.emojis.get("357348246483370006"));
+  message.react(message.guild.emojis.get(emoji.fblike));
+  message.react(message.guild.emojis.get(emoji.fblove));
 }
 
 /* Main Code */
