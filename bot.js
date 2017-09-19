@@ -12,11 +12,10 @@ module.exports = message => {
   const reply = {
     "<@318700956244115457>": "Prefix here is `" + prefix + "`"
   }
+  if (cmd && message.channel.type !== "text" && cmd.conf.guildOnly) return message.reply('This command is not avaliable in DMs. Please run this command in a server.');
   if (reply[message.content]) {
     message.channel.send(reply[message.content]);
   }
-  if (message.channel.type === "dm") return message.reply(`Commands are disabled in DM for now.\nType \`${config.prefix}h\` in a server for help.`);
-  if (message.channel.type === "group") return;
   
 /* Pokémon Flame Yellow Exclusive */
 
