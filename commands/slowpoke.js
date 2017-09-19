@@ -20,7 +20,7 @@ exports.help = {
   name: 'slowpoke', 
   description: 'Sends an image like a slowpoke.', 
   usage: 'slowpoke', 
-  module: 'Fun', 
+  module: 'Pokemon', 
   permit: ' ', 
   alias: '/ slow'
 }
