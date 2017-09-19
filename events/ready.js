@@ -14,10 +14,10 @@ module.exports = client => {
       }
     }, pikabot.rotategametime)
   }else {
-    if (streaming) {
+    if (streaming === true) {
       client.user.setGame(`${pikabot.game} | ${client.guilds.size} Servers` , pikabot.streamingurl);
     } else {
-      client.user.setGame(pikabot.game)
+      client.user.setGame(pikabot.game);
     }	
   }
 
