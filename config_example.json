@@ -1,18 +1,24 @@
 {
-/* your token here */
+// your bot's token here
 "token": "",
 
-/* bot's prefix for all module */
+// bot's prefix for all module
 "prefix": "+",
 
-/* bot owner id, to have multiple owners seperate them by ","
-Example - [id1, id2, id3]*/
-"botOwner": "[]",
+// bot owner id, to have multiple owners seperate them by ","
+// Example - ["id1", "id2", "id3"]
+"botOwner": ["0"],
 
-/* other bot info */
+// bot's status, "online" "idle" "dnd" or "invisible", this can be changed by "+setstatus" command
 "status": "online",
+  
+// bot's game that the bot will be playing
 "game": "",
+  
+// change it to true if you want the game to be streaming, status will be purple colour in that case
 "streaming": false,
+
+// a vaild twitch streaming url here if the game is streaming
 "streamingurl": "",
 
 /* bot's official server invite */
