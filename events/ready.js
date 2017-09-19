@@ -8,7 +8,7 @@ let streaming = pikabot.streaming;
 client.user.setStatus(pikabot.status);
 
 if (streaming === true) {
-client.user.setGame(`${pikabot.prefix}h for help | ${client.guilds.size} Servers` , pikabot.streamingurl);
+client.user.setGame(`${pikabot.game} | ${client.guilds.size} Servers` , pikabot.streamingurl);
 } else {
 client.user.setGame(pikabot.game)
 }	
