@@ -10,7 +10,7 @@ module.exports = client => {
       if (!streaming) {
         client.user.setGame(game)
       }else {
-        client.user.setGame(game, streamingurl);
+        client.user.setGame(game, pikabot.streamingurl);
       }
     }, pikabot.rotategametime)
   }else {
