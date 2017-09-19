@@ -44,7 +44,7 @@ message.channel.send({embed});
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  guildOnly: true,
   aliases: ['uinfo'],
   permLevel: 0
 };
