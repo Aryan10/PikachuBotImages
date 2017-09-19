@@ -4,7 +4,7 @@ message.channel.send(`Congratulation ${message.guild.members.random().displayNam
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  guildOnly: true,
   aliases: [],
   permLevel: 0
 };
