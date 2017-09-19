@@ -1,4 +1,5 @@
-[ "Pokemon Ultra Sun",
+  [ 
+  "Pokemon Ultra Sun",
   "Pokemon Ultra Moon",
   "+h for help",
   "+ is the default prefix",
@@ -8,5 +9,6 @@
   "with my bot master Aryan 10",
   "Pokemon Flame Yellow",
   "in Viridan Forest",
-  "+help me"]
+  "+help me"
+  ]
 
