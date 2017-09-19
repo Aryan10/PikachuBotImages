@@ -4,7 +4,7 @@ let game = message.content.split(' ').slice(1)
 let playing = game.join(' ')
 if(message.author.id === config.botOwner){
 message.reply("New Game Set: " + playing);
-client.user.setGame(playing)
+client.user.setGame(`${playing} | ${client.guilds.size} Servers`)
 }else {
 message.reply("I only follows my master's command.")
 }
