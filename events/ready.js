@@ -1,5 +1,5 @@
 const pikabot = require("../config.json");
-const games = require("../util/games.json").game;
+const games = require("../util/games.json");
 module.exports = client => {
   console.log(`Ready to server in ${client.channels.size} channels on ${client.guilds.size} servers, for a total of ${client.users.size} users.`);
   let streaming = pikabot.streaming;
