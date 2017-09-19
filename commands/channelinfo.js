@@ -2,12 +2,9 @@ const Discord = require("discord.js");
 const config = require("../config.json");
 
 exports.run = (client, message, args) => {
-  var ch;
-  if (message.mentions.channels.first() !== undefined) {
-    ch = message.mentions.channels.first();
-  }else {
-    ch = message.channel;
-  }
+  let ch = message.mentions.channels.first()
+  if (!ch) ch = message.guild.channels.find("name", args[0]);
+  if (!ch) ch = message.channel;
 
   const embed = new Discord.RichEmbed()
     .setTitle(ch.name)
