@@ -3,8 +3,8 @@ const config = require('../config.json');
 let game = message.content.split(' ').slice(1)
 let playing = game.join(' ')
 if(message.author.id === config.botOwner){
-message.reply("New Game Set");
-client.user.setGame(playing, 'http://www.twitch.tv/logout')
+message.reply("New Streaming Set: " + playing);
+client.user.setGame(`${playing} | ${client.guilds.size}`, config.streamingurl)
 }else {
 message.reply("I only follows my master's command.")
 }
