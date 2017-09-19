@@ -1,7 +1,7 @@
 const config = require("../config.json");
 exports.run = (client, message, args) => {
   let pong = "Pong?";
-  if (message.content.toLowerCase().startsWith(config.prefix + "pong") pong = "Ping?";
+  if (message.content.toLowerCase().startsWith(config.prefix + "pong")) pong = "Ping?";
   message.channel.send(pong).then(sent => {   
     sent.edit(`:ping_pong: Pong!\nTook :blue_heart:${sent.createdTimestamp - message.createdTimestamp}ms\nAPI Latency - ${Math.round(client.ping)}ms`);
     sent.react('🏓');
