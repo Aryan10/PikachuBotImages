@@ -1,6 +1,9 @@
+const config = require("../config.json");
 exports.run = (client, message, args) => {
-message.channel.send('Pong?').then(sent => {
-    sent.edit(`:ping_pong:Pong! Took ${sent.createdTimestamp - message.createdTimestamp}ms`);
+  let pong = "Pong?";
+  if (message.content.toLowerCase().startsWith(config.prefix + "pong") pong = "Ping?";
+    message.channel.send(pong).then(sent => {   
+    sent.edit(`:ping_pong: Pong!\nTook :blue_heart:${sent.createdTimestamp - message.createdTimestamp}ms\nAPI Latency - ${Math.round(client.ping)}ms`);
     sent.react('🏓');
     });
 }
@@ -8,7 +11,7 @@ message.channel.send('Pong?').then(sent => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ['pong'],
   permLevel: 0
 };
 
@@ -18,5 +21,5 @@ exports.help = {
   usage: 'ping',
   module: 'Fun',
   permit: ' ',
-  alias: ' '
+  alias: '/ pong'
 };
