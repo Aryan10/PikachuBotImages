@@ -30,6 +30,7 @@ exports.run = (client, message, args) => {
   if (m_map === "") {
     m_map = "_None_";
   }
+  if (m_map.length > 1999) m_map = "Too much members, can't display.";
   
   const embed = new Discord.RichEmbed()
     .setAuthor(role.name, guild.iconURL)
