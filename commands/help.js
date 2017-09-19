@@ -21,7 +21,7 @@ exports.run = (client, message, args) => {
     message.author.send({embed: {
       color:4447003,
       description:`Type ${settings.prefix}help <commandname> for details on a specific command.\nType ${settings.prefix}modules for a list of modules.`}});
-    message.reply("Check your Direct Message!");
+    if (message.channel.type !== "dm") message.reply("Check your Direct Message!");
     /* new code ends here */
   } else {
     let command = args[0];
