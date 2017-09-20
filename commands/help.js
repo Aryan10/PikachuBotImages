@@ -32,7 +32,9 @@ exports.run = (client, message, args) => {
     }else {
       return message.reply("Can't find that command.");
     }
-      const cmdhelp = new Discord.RichEmbed()
+    let ally = command.conf.aliases.join(" / "+ config.prefix);
+    if (ally !== "") ally = "/ " + config.prefix + ally;
+    const cmdhelp = new Discord.RichEmbed()
       .setColor(4447003)
       .setDescription(`\`${settings.prefix}${command.help.name} ${command.help.alias}\`\n${command.help.description}\n**${command.help.permit}**`)
       .addField(`Usage`, `\`${settings.prefix}${command.help.usage}\``)
