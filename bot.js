@@ -9,6 +9,9 @@ module.exports = message => {
       prefix = [settings.prefix, server[message.guild.id].prefix];
     }
   }
+  for(const thisPrefix of prefix) {
+    if(message.content.startsWith(thisPrefix)) prefix = thisPrefix;
+  }
   if (message.author === client.user || message.author.bot) return;
   const reply = {
     "<@318700956244115457>": "Prefix here is `" + prefix + "`"
