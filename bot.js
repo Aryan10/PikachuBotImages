@@ -3,10 +3,10 @@ const server = require("./util/servers.json");
 const emoji = require("./util/emojis.json");
 module.exports = message => {
   let client = message.client;
-  let prefix = settings.prefix;
+  let prefix = [settings.prefix];
   if(message.channel.type !== "dm"){ 
     if(server[message.guild.id]){ 
-      prefix = server[message.guild.id].prefix;
+      prefix = [settings.prefix, server[message.guild.id].prefix];
     }
   }
   if (message.author === client.user || message.author.bot) return;
