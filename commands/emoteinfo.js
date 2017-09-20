@@ -5,11 +5,8 @@ exports.run = (client, message, args) => {
   if (!message.content.includes("<") && !message.content.includes(":") && !message.content.includes(">")) return message.reply("No emoji specified.");
 
   // setting emoji
-  let emoji = message.content.split("<").slice(1).join(" ").split(":").slice(2).join(" ").split(">").slice(0).join(" ");
+  let emoji = message.content.split("<").slice(1).join(" ").split(":").slice(2).join(" ").split(">").slice(0).join(" ").replace(/ /g, "");
   console.log(emoji); // debug
-  
-  // checking emoji length
-  if (emoji.length !== 18) return message.reply("Please specify emojis only.");
   
   // checking if emoji is a global one
   if (!message.guild.emojis.get(emoji)) return message.reply("Can't find emoji, make sure it is not a global one.");
@@ -43,7 +40,7 @@ exports.conf = {
 
 exports.help = {
   name: 'emoteinfo', 
-  description: 'Shows a certain emoji\'s info.', 
+  description: 'Shows a certain custom emoji\'s info.', 
   usage: 'emoji :emoji:', 
   module: 'Other', 
   permit: ' ', 
