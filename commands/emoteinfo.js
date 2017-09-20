@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 exports.run = (client, message, args) => {
   // emoji check
   if (!message.content.includes("<") && !message.content.includes(":") && !message.content.includes(">")) return message.reply("No emoji specified.");
-  if (!args[0].startsWith("<") return message.reply("No emoji specified.");
+  if (!args[0].startsWith("<")) return message.reply("No emoji specified.");
   
   // setting emoji
   let emoji = message.content.split("<").slice(1).join(" ").split(":").slice(2).join(" ").split(">").slice(0).join(" ");
