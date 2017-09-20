@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
   console.log(emoji); // debug
   
   // checking if emoji is a global one
-  if (!message.guild.emojis.get(emoji)) return message.reply("Can't find emoji, make sure it is not a global one.");
+  if (!message.guild.emojis.get(emoji)) return message.reply("Can't find emoji, make sure it is not a global one.\n\nImage Preview: https://cdn.discordapp.com/emojis/" + emoji + ".png");
   
   // finising emoji setup
   emoji = client.emojis.get(emoji);
