@@ -23,6 +23,7 @@ exports.run = (client, message, args) => {
   const embed = new Discord.RichEmbed()
     .setAuthor(emoji.name, emoji.url)
     .addField("Emoji ID", emoji.id)
+    .setColor(0xFFFF00)
     .addField("Usage", `${emoji.toString()} \`:${emoji.name}:\``)
     .addField("Server", emoji.guild.name)
     .addField("Roles", roles)
