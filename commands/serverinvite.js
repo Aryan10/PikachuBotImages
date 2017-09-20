@@ -1,7 +1,7 @@
 exports.run = (client, message, args) => {
   if (!message.member.hasPermission("CREATE_INSTANT_INVITE")) return message.reply("You don't have the permission to create instant invite.");
   message.guild.channels.get(message.channel.id).createInvite().then(invite => 
-    message.channel.send("Invite Link of **" + guild.name + "**.\n\n" + invite.url));
+    message.channel.send("Invite Link of **" + message.guild.name + "**.\n\n" + invite.url));
 }
 
 exports.conf = {
