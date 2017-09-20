@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
   
   // defining code
   let format = `  "${guild.id}" : {\n  "prefix" : "${args[0]}",\n "desc" : "No Description provided."\n},`;
-  if (registered) format = `"${guild.id}" : {\n  "prefix" : "${args[0]}",\n "desc" : "${servers[guild.id].desc}"\n},`;
+  if (registered) format = `"${guild.id}" : {\n    "prefix" : "${args[0]}",\n    "desc" : "${servers[guild.id].desc}"\n},`;
   
   // sendIt()
   botOwner.send(`${guild.name} wants to change there prefix to ${args[0]}`);
