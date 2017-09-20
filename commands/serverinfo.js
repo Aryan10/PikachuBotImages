@@ -42,6 +42,7 @@ exports.run = (client, message, args) => {
     .setTimestamp();
   
   if (servers[guild.id] !== undefined && servers[guild.id].desc !== "")  embed.setDescription(servers[guild.id].desc);
+  else embed.setDescription("No Description provided.\nUse `" + config.prefix + "setservertopic` command to set one.");
   message.channel.send({embed});
 };
 
