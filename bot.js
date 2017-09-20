@@ -5,7 +5,7 @@ module.exports = message => {
   let client = message.client;
   let prefix = settings.prefix;
   if(message.channel.type !== "dm"){ 
-    if(server[message.guild.id] && server[message.guild.id].prefix !== ""){ 
+    if(server[message.guild.id]){ 
       prefix = server[message.guild.id].prefix;
     }
   }
