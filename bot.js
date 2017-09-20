@@ -25,8 +25,8 @@ if (message.channel.id === "323690694742900748") {
 }
 
 /* Main Code */
-  if (!message.content.startsWith(settings.prefix)) return;
-  let command = message.content.split(' ')[0].slice(settings.prefix.length);
+  if (!message.content.startsWith(prefix)) return;
+  let command = message.content.split(' ')[0].slice(prefix.length);
   let args = message.content.split(' ').slice(1);
   let perms = client.elevation(message);
   let cmd;
