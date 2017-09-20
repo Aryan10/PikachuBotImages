@@ -13,7 +13,7 @@ exports.conf = {
 
 exports.help = {
   name: 'serverinvite', 
-  description: 'Sends the current server\'s invite url.'
+  description: 'Sends the current server\'s invite url.',
   usage: 'serverinvite', 
   module: 'Admin', 
   permit: 'Create Instant Invite Server Permission', 
