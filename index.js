@@ -3,6 +3,8 @@ const client = new Discord.Client();
 const fs = require("fs");
 const chalk = require("chalk");
 const moment = require("moment");
+const firebase = require("firebase-admin");
+const serviceAccount = require("./util/database/pikabot-firebase.json");
 const config = require("./config.json");
 
 if(process.version.slice(1).split('.')[0]<8) throw new Error('Node 8.0.0 or higher is required. Update Node on your system.');
@@ -15,15 +17,11 @@ const log = message => {
 console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 }; 
 
-
-var admin = require("firebase-admin");
-
-var serviceAccount = require("./util/database/pikabot-firebase.json");
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+firebase.initializeApp({
+  credential: firebase.credential.cert(serviceAccount),
   databaseURL: "https://pikabot-discordjs.firebaseio.com"
 });
+var ref = firebase.database();
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
