@@ -18,7 +18,7 @@ exports.run = (client, message, args) => {
   // mute role check
   if (!muterole) {
     guild.createRole({name: muterolename});
-    guild.channels.forEach(c => c.overwritePermissions(guild.roles.find("name", muterolename), {
+    guild.channels.forEach(c => c.overwritePermissions(guild.roles.find(r=>r.name === muterolename), {
       SEND_MESSAGES: false,
       ADD_REACTIONS: false,
       CREATE_INSTANT_INVITE: false,
