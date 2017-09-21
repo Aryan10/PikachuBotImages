@@ -15,6 +15,16 @@ const log = message => {
 console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 }; 
 
+
+var admin = require("firebase-admin");
+
+var serviceAccount = require("./util/database/pikabot-firebase.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://pikabot-discordjs.firebaseio.com"
+});
+
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir('./commands/', (err, files) => {
