@@ -10,12 +10,12 @@ exports.run = (client, message, args) => {
     guild = client.guilds.find("name", params);
 }
 
-  let ch;
+  /*let ch;
   if (!guild.defaultChannel) {
     ch = "_None_";
   }else {
     ch = guild.defaultChannel.name;
-  }
+  }*/
 
   let verlvltxt = message.guild.verificationLevel;
   if (verlvltxt == 0) verlvltxt = "None";
@@ -32,7 +32,7 @@ exports.run = (client, message, args) => {
     .addField("Server ID", guild.id)
     .addField("Server Owner", guild.owner.user.tag)
     .addField("Members", `${guild.memberCount} Total | ${guild.members.filter(m=>m.user.bot).size} Bots\n${guild.members.filter(m => m.presence.status === 'online').size} Online | ${guild.members.filter(m => m.presence.status === 'idle').size} Idle | ${guild.members.filter(m => m.presence.status === 'dnd').size} Do Not Disturb`)
-    .addField("Channels", `${guild.channels.size} Total\n${guild.channels.filter(c=>c.type === "text").size} Text | ${guild.channels.filter(c=>c.type === "voice").size} Voice\n__Default Channel__: **${ch}**`)
+    .addField("Channels", `${guild.channels.size} Total\n${guild.channels.filter(c=>c.type === "text").size} Text | ${guild.channels.filter(c=>c.type === "voice").size} Voice`)
     .addField("Roles", `${guild.roles.size} Total`)
     .addField("Region", capitalizeFirstLetter(guild.region))
     .addField("Emojis", `${guild.emojis.size} Total`)
