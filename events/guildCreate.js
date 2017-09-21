@@ -15,4 +15,5 @@ module.exports = guild => {
   if (!ch) return;
   }
   ch.send({embed});
+  client.emit("ready");
 }
