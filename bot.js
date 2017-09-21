@@ -14,7 +14,7 @@ module.exports = message => {
   }
   if (message.author === client.user || message.author.bot) return;
   const reply = {
-    "<@318700956244115457>": "Prefix here is `" + prefix + "`"
+    "<@318700956244115457>": "Prefix here is `" + prefix[0] + "`"
   }
   if (reply[message.content]) {
     message.channel.send(reply[message.content]);
