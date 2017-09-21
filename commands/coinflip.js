@@ -2,7 +2,7 @@ exports.run = (client, message, args) => {
   const string = ["heads", "tails"]
   var random = Math.floor(Math.random() * string.length);
   const str = string[random];
-  message.channel.send("You flipped **"+ capFL(str) + "**.", {files: [`../images/coin/${str}.png`]});
+  message.channel.send("You flipped **"+ capFL(str) + "**.", {files: [`./images/coins/${str}.png`]});
 }
 
 exports.conf = {
