@@ -3,6 +3,7 @@ const servers = require("../util/servers.json");
 
 exports.run = (client, message, args) => { 
   // defines
+  return message.reply("It's temporary disabled for some database updates.");
   let guild = message.guild;
   let botOwner = client.users.get(config.botOwner);
   let registered = false;
