@@ -32,7 +32,7 @@ let money = ref.ref('/money');
 let userData = {};
 let users = ref.ref('/users');
 
-databaseUpdate(reference, file){
+function databaseUpdate(reference, file){
     reference.update(file);
   }
 
