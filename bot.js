@@ -1,7 +1,6 @@
 const settings = require("./config.json");
 const server = require("./util/servers.json");
 const emoji = require("./util/emojis.json");
-const ref = require("firebase-admin").database();
 
 module.exports = message => {
   let client = message.client;
