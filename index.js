@@ -23,6 +23,19 @@ firebase.initializeApp({
 });
 var ref = firebase.database();
 
+let levelsData = {};
+let levels = ref.ref('/level');
+let serverData = {};
+let servers = ref.ref('/servers');
+let moneyData = {};
+let money = ref.ref('/money');
+let userData = {};
+let users = ref.ref('/users');
+
+databaseUpdate(reference, file){
+    reference.update(file);
+  }
+
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir('./commands/', (err, files) => {
