@@ -5,14 +5,6 @@ const ref = require("firebase-admin").database();
 
 module.exports = message => {
   let client = message.client;
-  let levelsData = {};
-  let levels = ref.ref('/level');
-  let serverData = {};
-  let servers = ref.ref('/servers');
-  let moneyData = {};
-  let money = ref.ref('/money');
-  let userData = {};
-  let users = ref.ref('/users');
   let prefix = [settings.prefix];
   if(message.channel.type !== "dm"){ 
     if(server[message.guild.id]){ 
