@@ -1,8 +1,18 @@
 const settings = require("./config.json");
 const server = require("./util/servers.json");
 const emoji = require("./util/emojis.json");
+const ref = require("firebase-admin").database();
+
 module.exports = message => {
   let client = message.client;
+  let levelsData = {};
+  let levels = ref.ref('/level');
+  let serverData = {};
+  let servers = ref.ref('/servers');
+  let moneyData = {};
+  let money = ref.ref('/money');
+  let userData = {};
+  let users = ref.ref('/users');
   let prefix = [settings.prefix];
   if(message.channel.type !== "dm"){ 
     if(server[message.guild.id]){ 
@@ -41,7 +51,7 @@ if (message.channel.id === "323690694742900748") {
   if (cmd && message.channel.type !== "text" && cmd.conf.guildOnly) return message.reply('This command is not avaliable in DMs. Please run this command in a server.');
   if (cmd) {
     if (perms < cmd.conf.permLevel) return;
-    cmd.run(client, message, args);
+    cmd.run(client, message, args, levels, levelsData, serverData, servers, userData, users, moneyData, money);
   }
 
 };
