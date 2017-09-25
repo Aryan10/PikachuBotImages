@@ -16,7 +16,7 @@ module.exports = message => {
   if (message.author === client.user || message.author.bot) return;
   const reply = {
     "<@318700956244115457>": "Prefix here is `" + prefix[0] + "`",
-    `discord.${`gg`||`io`||`li`||`me`}`: "Don't send invite links here."
+    "discord." + "gg"||"io"||"li"||"me": "Don't send invite links here."
   }
   if (reply[message.content.toLowerCase()]) {
     message.reply(reply[message.content]).then(m=>m.delete(7000));
