@@ -22,7 +22,6 @@ module.exports = message => {
   }
   let msginc = (string) => message.content.toLowerCase().includes("discord." + string);
   if (msginc("gg") || msginc("io") || msginc("me") || msginc("li")) {
-    message.delete(300);
     return message.reply("Don't send invite links.").then(m=>m.delete(5000));
   }
 
