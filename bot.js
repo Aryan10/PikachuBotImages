@@ -20,8 +20,8 @@ module.exports = message => {
   if (reply[message.content.toLowerCase()]) {
     message.reply(reply[message.content]).then(m=>m.delete(7000));
   }
-  let includes = (string) => message.content.toLowerCase().includes("discord." + string);
-  if (includes("gg") || includes("io") || includes("me") || includes("li")) {
+  let msginc = (string) => message.content.toLowerCase().includes("discord." + string);
+  if (msginc("gg") || msginc("io") || msginc("me") || msginc("li")) {
     message.delete(300);
     return message.reply("Don't send invite links.").then(m=>m.delete(5000));
   }
