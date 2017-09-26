@@ -48,7 +48,11 @@ if (message.channel.id === "323690694742900748") {
   if (cmd && message.channel.type !== "text" && cmd.conf.guildOnly) return message.reply('This command is not avaliable in DMs. Please run this command in a server.');
   if (cmd) {
     if (perms < cmd.conf.permLevel) return;
-    cmd.run(client, message, args);
+    message.channel.startTyping();
+    setTimeout(function(){
+        message.channel.stopTyping();
+        cmd.run(client, message, args);
+      }, 1000);
   }
 
 };
