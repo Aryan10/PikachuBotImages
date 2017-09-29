@@ -20,7 +20,7 @@ module.exports = message => {
   if (reply[message.content.toLowerCase()]) {
     message.reply(reply[message.content]).then(m=>m.delete(7000));
   }
-  let msginc = (string) => message.content.toLowerCase().includes("discord." + string);
+  let msginc = (string) => message.content.toLowerCase().includes("discord." + string + "/");
   if (msginc("gg") || msginc("io") || msginc("me") || msginc("li")) {
     return message.reply("Don't send invite links.").then(m=>m.delete(5000));
   }
@@ -52,7 +52,7 @@ if (message.channel.id === "323690694742900748") {
     setTimeout(function(){
         message.channel.stopTyping();
         cmd.run(client, message, args);
-      }, 1000);
+      }, settings.typingtime);
   }
 
 };
