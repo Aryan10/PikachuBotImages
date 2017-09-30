@@ -1,14 +1,17 @@
-exports.run = (client, message, args) => {
 const config = require ('../config.json');
+const servers = require("../util/servers.json");
+const users = require("../util/users.json");
 const Discord = require("discord.js");
+const fs = require("fs");
+
+
+exports.run = (client, message, args) => {
 const bot = client.user;
 const guild = message.guild;
 const channel = message.channel;
 const msg = message.content;
 const author = message.author;
 const member = message.member;
-const servers = require("../util/servers.json");
-const users = require("../util/users.json");
   
 if(message.author.id !== config.botOwner) return message.reply ('you are not my owner!');
 if (!args[0]) return;
@@ -55,6 +58,12 @@ exports.help = {
   alias: ' '
 };
 
-function capitalizeFirstLetter(string) {
+function capFL(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function refreshUsers() {
+  fs.writeFile('../util/users.json', JSON.stringify(users), (err) => {
+    if (err) console.error(err);
+  });
 }

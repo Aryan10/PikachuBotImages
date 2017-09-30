@@ -55,7 +55,7 @@ if (message.channel.id === "323690694742900748") {
     }
     message.reply(msg);
   }
-  fs.writeFile("./points.json", JSON.stringify(points), (err) => {
+  fs.writeFile("./util/users.json", JSON.stringify(points), (err) => {
     if (err) console.error(err)
   });
   

@@ -5,13 +5,15 @@ exports.run = (client, message, args) => {
   let user = message.mentions.users.first();
   if (!user) user = message.author;
   let data = points[user.id];
+  if (!data) return;
 
   const embed = new Discord.RichEmbed()
     .setAuthor(user.username, user.avatarURL)
     .setTitle("🗒 Rank")
     .setThumbnail(user.avatarURL)
-    .setDescription(`:star2: | Level: ${data.lv}\n:speech_balloon: | Total XP: ${data.xp}`)
-    .setFooter("Global Level XP")
+    .addField("Global", `:star2: | Level: ${data.lv}\n:speech_balloon: | Total XP: ${data.xp}`)
+    .addField("Server", "_Coming soon :)_")
+    .setFooter("Level XP", client.user.avatarURL)
     .setTimestamp()
     .setColor(3447003);
   message.channel.send({embed});
