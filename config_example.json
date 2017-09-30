@@ -1,4 +1,45 @@
 {
+// Things to note: 
+//// if you see something like "" don't remove it, instead type the input inside it
+//// if you see true or false, that clearly means yes or no, just not add ""
+//// numbers are always without ""
+
+// Bot's Token
+"token": "Some Weird Bot Token Here",
+
+// Bot's default prefix
+"prefix": "+",
+
+// Bot Owner ID this will let someone be the Bot Owner with access to all commands.
+// You can have multiple, separate by , 
+// for example - ["id1", "id2", "id3"]
+"botOwner": ["0"],
+
+// the time, bot will take to type (in milliseconds, 0 means no typing
+"typingtime": 0,
+
+// a channel's id in which bot will send all server join and leave logs
+"botlogchannel": "",
+
+// bot's status
+// "online", "idle", "dnd" or "invisible"
+"status": "idle",
+
+// bot's default game if rotategame is false
+"game": "",
+
+// if or not if the game will be rotated from the file games.json in util folder
+// also the time taken to change it in milliseconds
+"rotategame": false,
+"rotategametime": 0,
+
+// if or not if game will be streaming
+// specify vaild url too else it might not work
+"streaming": false,
+"streamingurl": "http://www.twitch.tv/logout",
+
+// bot's default invites
+"serverinv{
 // your bot's token here
 "token": "",
 
@@ -25,6 +66,4 @@
 "serverinvite": "",
 "botinvite": "",
 "botsdiscordpwinvite": "",
-"discordbotsorginvite": "",
-"githubrepo": ""}
-
+"

@@ -27,6 +27,9 @@ exports.run = (client, message, args) => {
   }else
   if (args[0].toLowerCase().startsWith("help")) {
   message.channel.send(`**List Of Commands in Help Module**\n\`\`\`${client.commands.filter(c=>c.help.module === "Help").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)} :: ${cmd.help.description}`).join("\n")}\n\`\`\``);
+  }else
+  if (args[0].toLowerCase().startsWith("xp")) {
+  message.channel.send(`**List Of Commands in XP Module**\n\`\`\`${client.commands.filter(c=>c.help.module === "XP").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)} :: ${cmd.help.description}`).join("\n")}\n\`\`\``);
   }else {
   message.channel.send("Module not found, make sure that spellings are correct.");
   }

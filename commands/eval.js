@@ -6,6 +6,10 @@ const guild = message.guild;
 const channel = message.channel;
 const msg = message.content;
 const author = message.author;
+const member = message.member;
+const servers = require("../util/servers.json");
+const users = require("../util/users.json");
+  
 if(message.author.id !== config.botOwner) return message.reply ('you are not my owner!');
 if (!args[0]) return;
 const clean = text => {
@@ -38,7 +42,7 @@ description:`**EVAL INPUT:**\n\`\`\`${code}\`\`\`\n\n**EVAL OUTPUT:**\n\`\`\`${c
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ['jsbot'],
   permLevel: 4
 };
 
