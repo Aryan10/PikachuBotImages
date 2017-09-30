@@ -32,7 +32,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'setstaus',
+  name: 'setstatus',
   description: 'Sets the status of bot.',
   usage: 'setstatus [status]',
   module: 'Admin',
