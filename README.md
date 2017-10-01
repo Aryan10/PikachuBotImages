@@ -15,3 +15,7 @@
 >2. Adjust the [config_example.json](https://github.com/Aryan10/PikaBot/blob/master/config_example.json) to your requirements. And rename it to **config.json**.
 >
 >3. Use a VPS or NodeJs to host it.
+
+## Updating
+
+>You can directly use the latest repo, but make sure to backup util folder and place it again after update.
