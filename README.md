@@ -10,7 +10,7 @@
 
 ## Hosting
 
->1. Clone or download the github repo.
+>1. Download the github repo from releases.
 >
 >2. Adjust the [config_example.json](https://github.com/Aryan10/PikaBot/blob/master/config_example.json) to your requirements. And rename it to **config.json**.
 >

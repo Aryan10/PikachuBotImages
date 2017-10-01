@@ -1,4 +1,4 @@
-if (!server[message.guild.id] {
+/* if (!server[message.guild.id] {
   server[message.guild.id] = {
     "prefix" : "",
     "desc" : "",
@@ -16,9 +16,8 @@ if (!server[message.guild.id] {
     "currency": "",
     "xpSystem": true,
     "lvlUpMsg": "",
-    "channelCreate": false,
-    "channelDelete": false,
-    "chanconst settings = require("./config.json");
+    "channelCreate */
+const settings = require("./config.json");
 const server = require("./util/servers.json");
 const emoji = require("./util/emojis.json");
 const fs = require("fs");
@@ -75,11 +74,49 @@ if (message.channel.id === "323690694742900748") {
     }
     message.reply(msg);
   }
+  if (require("./util/users.json")[message.author.id].blacklisted && message.author.id === settings.botOwner) !userData.blacklisted;
   fs.writeFile("./util/users.json", JSON.stringify(points), (err) => {
     if (err) console.error(err)
   });
   
-  
+if (!server[message.guild.id]) {
+  server[message.guild.id] = {
+    "prefix" : "",
+    "desc" : "",
+    "muteRole": "",
+    "autoRole": "",
+    "selfAssignRoles": [],
+    "joinChanels": [],
+    "joinType": "",
+    "joinMsg": "",
+    "joinDM": false,
+    "byeChannels": [],
+    "byeType": "",
+    "byeMsg": "",
+    "byeDM": false,
+    "currency": "",
+    "xpSystem": true,
+    "lvlUpMsg": "",
+    "channelCreate": false,
+    "channelDelete": false,
+    "channelUpdate": false,
+    "guildBanAdd": false,
+    "guildBanRemove": false,
+    "userUpdate": false,
+    "roleCreate": false,
+    "roleDelete": false,
+    "roleUpdate": false,
+    "logChannels": [],
+    "disabledCmds": [],
+    "disabledMdls": [],
+    "disabledAllMdls": false,
+    "blacklistedUsers": [],
+    "badWords": []
+  }
+  fs.writeFile('../util/servers.json', JSON.stringify(server), (err) => {
+    if (err) console.log(err);
+  });
+}
   
 /* Main Code */
   if (!message.content.startsWith(prefix)) return;
