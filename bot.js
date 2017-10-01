@@ -7,16 +7,7 @@
     "selfAssignRoles": [],
     "joinChanels": [],
     "joinType": "",
-    "joinMsg": "",
-    "joinDM": false,
-    "byeChannels": [],
-    "byeType": "",
-    "byeMsg": "",
-    "byeDM": false,
-    "currency": "",
-    "xpSystem": true,
-    "lvlUpMsg": "",
-    "channelCreate */
+    "joinMsg": "",*/
 const settings = require("./config.json");
 const server = require("./util/servers.json");
 const emoji = require("./util/emojis.json");
@@ -113,7 +104,7 @@ if (!server[message.guild.id]) {
     "blacklistedUsers": [],
     "badWords": []
   }
-  fs.writeFile('../util/servers.json', JSON.stringify(server), (err) => {
+  fs.writeFile('./util/servers.json', JSON.stringify(server), (err) => {
     if (err) console.log(err);
   });
 }
