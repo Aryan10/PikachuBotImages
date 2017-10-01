@@ -1,0 +1,28 @@
+{
+  "290162830009696257" : 
+  {
+    "prefix" : "%",
+    "desc" : "",
+    "muteRole": "",
+    "autoRole": "",
+    "joinChanel": "",
+    "joinType": "",
+    "joinMsg": "",
+    "joinDM": false,
+    "byeChannel": "",
+    "byeType": "",
+    "byeMsg": "",
+    "byeDM": false,
+    "currency": "",
+    "lvlUpMsg": "",
+    "channelLogs": false,
+    "userLogs": false,
+    "roleLogs": false,
+    "logChannel": "",
+    "disabledCmds": [],
+    "disabledMdls": [],
+    "disabledAllMdls": false,
+    "blacklistedUsers": [],
+    "badWords": []
+  }
+}

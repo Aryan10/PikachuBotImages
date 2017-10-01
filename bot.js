@@ -1,4 +1,24 @@
-const settings = require("./config.json");
+if (!server[message.guild.id] {
+  server[message.guild.id] = {
+    "prefix" : "",
+    "desc" : "",
+    "muteRole": "",
+    "autoRole": "",
+    "selfAssignRoles": [],
+    "joinChanels": [],
+    "joinType": "",
+    "joinMsg": "",
+    "joinDM": false,
+    "byeChannels": [],
+    "byeType": "",
+    "byeMsg": "",
+    "byeDM": false,
+    "currency": "",
+    "xpSystem": true,
+    "lvlUpMsg": "",
+    "channelCreate": false,
+    "channelDelete": false,
+    "chanconst settings = require("./config.json");
 const server = require("./util/servers.json");
 const emoji = require("./util/emojis.json");
 const fs = require("fs");
@@ -58,6 +78,8 @@ if (message.channel.id === "323690694742900748") {
   fs.writeFile("./util/users.json", JSON.stringify(points), (err) => {
     if (err) console.error(err)
   });
+  
+  
   
 /* Main Code */
   if (!message.content.startsWith(prefix)) return;

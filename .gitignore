@@ -12,6 +12,4 @@ Dockerfile
 docker-compose.yml
 
 # Specific Files
-util
 config.json
-watch.json
