@@ -1,13 +1,4 @@
-/* if (!server[message.guild.id] {
-  server[message.guild.id] = {
-    "prefix" : "",
-    "desc" : "",
-    "muteRole": "",
-    "autoRole": "",
-    "selfAssignRoles": [],
-    "joinChanels": [],
-    "joinType": "",
-    "joinMsg": "",*/
+/* if (!server[message.guild.id] {*/
 const settings = require("./config.json");
 const server = require("./util/servers.json");
 const emoji = require("./util/emojis.json");
