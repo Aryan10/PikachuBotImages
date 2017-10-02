@@ -5,8 +5,8 @@ exports.run = (client, message, args) => {
   let user = message.mentions.users.first();
   if (!user) user = message.author;
   let data = points[user.id];
+  if (user.bot) return;
   if (!data) return;
-
   const embed = new Discord.RichEmbed()
     .setAuthor(user.username, user.avatarURL)
     .setTitle("🗒 Rank")

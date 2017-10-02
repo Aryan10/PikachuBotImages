@@ -9,13 +9,13 @@ exports.run = (client, message, args) => {
     /* new code starts here, delete this part if not works, replace with original if not works */
     const embed = new Discord.RichEmbed()
       .setAuthor("List Of Modules & there Commands", client.user.avatarURL)
-      .addField("Admin", `\`\`\`${client.commands.filter(c=>c.help.module === "Admin").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)} :: ${cmd.help.description}`).join("\n")}\n\`\`\``)
-      .addField("Fun", `\`\`\`${client.commands.filter(c=>c.help.module === "Fun").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)} :: ${cmd.help.description}`).join("\n")}\n\`\`\``)
-      .addField("Help", `\`\`\`${client.commands.filter(c=>c.help.module === "Help").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)} :: ${cmd.help.description}`).join("\n")}\n\`\`\``)
-      .addField("Utility", `\`\`\`${client.commands.filter(c=>c.help.module === "Other").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)} :: ${cmd.help.description}`).join("\n")}\n\`\`\``)
-      .addField("Pokemon", `\`\`\`${client.commands.filter(c=>c.help.module === "Pokemon").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)} :: ${cmd.help.description}`).join("\n")}\n\`\`\``)
-      .addField("Pokedex", `\`\`\`${client.commands.filter(c=>c.help.module === "Pokedex").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)} :: ${cmd.help.description}`).join("\n")}\n\`\`\``)
-      .addField("XP", `\`\`\`${client.commands.filter(c=>c.help.module === "XP").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)} :: ${cmd.help.description}`).join("\n")}\n\`\`\``)
+      .addField("Admin", `\`\`\`${client.commands.filter(c=>c.help.module === "Admin").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
+      .addField("Fun", `\`\`\`${client.commands.filter(c=>c.help.module === "Fun").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
+      .addField("Help", `\`\`\`${client.commands.filter(c=>c.help.module === "Help").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
+      .addField("Utility", `\`\`\`${client.commands.filter(c=>c.help.module === "Other").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
+      .addField("Pokemon", `\`\`\`${client.commands.filter(c=>c.help.module === "Pokemon").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
+      .addField("Pokedex", `\`\`\`${client.commands.filter(c=>c.help.module === "Pokedex").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
+      .addField("XP", `\`\`\`${client.commands.filter(c=>c.help.module === "XP").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
       .setColor(3447003)
     message.author.send({embed});
     message.author.send(`To add me to your server, use this link -> https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=214695859\nYou can use \`${config.prefix}modules\` command to see a list of all modules.\nYou can use \`${config.prefix}commands ModuleName\`\n(for example \`${config.prefix}commands Fun\`) to see a list of all of the commands in that module.\nFor a specific command help, use \`${config.prefix}help CommandName\` (for example \`${config.prefix}help 8ball\`)\n\n**LIST OF COMMANDS CAN BE FOUND BY TYPING \`${config.prefix}help\`**\n\nPikaBot Support Server: ${config.serverinvite}`);
@@ -47,7 +47,7 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['h'],
+  aliases: ['h', 'halp'],
   permLevel: 0
 };
 

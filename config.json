@@ -3,8 +3,10 @@
 
 "prefix": "+",
 "botOwner": "273865811133857792",
+  
 "typingtime": 700,
 "botlogchannel": "360358878560518144",
+"forwardBotDMsToOwner": false,
 
 "status": "online",
 "game": "back again, get started by +h command",

@@ -2,6 +2,7 @@ const settings = require("./config.json");
 const server = require("./util/servers.json");
 const emoji = require("./util/emojis.json");
 const fs = require("fs");
+const {RichEmbed} = require("discord.js");
 const points = require("./util/users.json");
 
 module.exports = message => {
@@ -25,6 +26,17 @@ module.exports = message => {
   let msginc = (string) => message.content.toLowerCase().includes("discord." + string + "/");
   if (msginc("gg") || msginc("io") || msginc("me") || msginc("li")) {
     return message.reply("Don't send invite links.").then(m=>m.delete(5000));
+  }
+  if (message.channel.type === "dm" && settings.forwardBotDMsToOwner) {
+    const embed = new RichEmbed()
+      .setAuthor(message.author.tag, message.author.avatarURL)
+      .setColor(3447003)
+      .setTitle("DM from " + message.author.username)
+      .setDescription(message.content)
+      .setThumbnail(message.author.avatarURL)
+      .setFooter(message.author.id)
+      .setTimestamp();
+    client.users.get(settings.botOwner).send({embed});
   }
 
 

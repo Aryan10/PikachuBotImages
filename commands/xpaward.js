@@ -3,6 +3,7 @@ const users = require("../util/users.json");
 const fs = require("fs");
 
 exports.run = (client, message, args) => {
+  if (!args[0]) return;
   const author = message.author;
   if (author.id !== config.botOwner) return message.reply("This command is Bot Owner Only!");
   let mention = message.mentions.users.first();
