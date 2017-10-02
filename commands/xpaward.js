@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
   if (!newxp) message.reply("Provide xp to award.");
   let data = users[author.id];
   if (!data) return message.reply(mention.tag + " doesn't have any database info.");
-  data.xp += newxp;
+  data.xp += parseInt(newxp);
   fs.writeFile('../util/users.json', JSON.stringify(data), (err) => {
     if (err) console.error(err);
   });

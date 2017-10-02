@@ -1,4 +1,3 @@
-/* if (!server[message.guild.id] {*/
 const settings = require("./config.json");
 const server = require("./util/servers.json");
 const emoji = require("./util/emojis.json");
@@ -10,7 +9,7 @@ module.exports = message => {
   let prefix = [settings.prefix];
   if(message.channel.type !== "dm"){ 
     if(server[message.guild.id]){ 
-      prefix = [settings.prefix, server[message.guild.id].prefix];
+      if (server[message.guild.id].prefix !== "") prefix = [server[message.guild.id].prefix, settings.prefix];
     }
   }
   for(const thisPrefix of prefix) {
@@ -61,6 +60,8 @@ if (message.channel.id === "323690694742900748") {
     if (err) console.error(err)
   });
   
+  // server add
+if (message.channel.type === "text") {
 if (!server[message.guild.id]) {
   server[message.guild.id] = {
     "prefix" : "",
@@ -99,6 +100,7 @@ if (!server[message.guild.id]) {
     if (err) console.log(err);
   });
 }
+};
   
 /* Main Code */
   if (!message.content.startsWith(prefix)) return;

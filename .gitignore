@@ -12,6 +12,6 @@ Dockerfile
 docker-compose.yml
 
 # Specific Files
-config.json
-util/servers.json
-util/users.json
+config.jso
+util/servers.jso
+util/users.jso
