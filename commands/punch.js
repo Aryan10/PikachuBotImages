@@ -1,11 +1,22 @@
-exports.run = (client, message, args) => {
+exports.run = (client, message, args)=> {
+  const config = require('../config.json'); 
   if (!args[0]) return message.reply("mention someone to use this command.");
   const bot = `<@${client.user.id}>`;
   const mention = `<@${message.mentions.users.first().id}>`;
   const author = `<@${message.author.id}>`;
-  if (author === mention) return message.reply("You can't punch yourself.");
-  if (mention === bot) return message.reply("You can't punch me :stuck_out_tongue_winking_eye:");
-  return message.channel.send(`_${author} punched ${mention}!_`);
+  const owner =  `<@${config.botOwner}>`;
+  if (owner === mention) return message.reply(`Don't punch my owner 😬`, {
+    files: ["http://i.imgur.com/coxlGCK.gif"] // Or replace with FileOptions object
+});
+  if (author === mention) return message.reply(`Don't punch  yourself XD, let me practice!`, {
+    files: ["https://media.tenor.com/images/69fac3d7f1abfbd74bbd2f395cb53702/tenor.gif"] // Or replace with FileOptions object
+});
+  if (mention === bot) return message.reply(`Don't punch me 😭`, {
+    files: ["https://media.giphy.com/media/dICjAqixKQFnG/giphy.gif"] // Or replace with FileOptions object
+});
+  return message.channel.send(`${author} _punched_ ${mention}!`, {
+    files: ["https://i.makeagif.com/media/8-22-2015/nbEwdI.gif"] // Or replace with FileOptions object
+});
 };
 
 exports.conf = {

@@ -6,16 +6,16 @@
   
 "typingtime": 700,
 "botlogchannel": "360358878560518144",
-"forwardBotDMsToOwner": false,
+"forwardBotDMsToOwner": true,
 
 "status": "online",
-"game": "back again, get started by +h command",
-"rotategame": false,
+"game": "Say +h",
+"rotategame": true,
 "rotategametime": 30000,
 "streaming": true,
 "streamingurl": "http://www.twitch.tv/logout",
 
-"serverinvite": "https://discord.gg/Qnukukw",
+"serverinvite": "https://discord.gg/j4XtMK2",
 "botinvite": "http://adf.ly/1oDiEY",
 "botsdiscordpwinvite": "http://adf.ly/1oDiHy",
 "discordbotsorginvite": "http://q.gs/Dszdg",

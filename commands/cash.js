@@ -1,6 +1,7 @@
 const users = require("../util/users.json");
 const servers = require("../util/servers.json");
 const db = require("../util/pikabot.json");
+const config = require("../config.json");
 const {RichEmbed} = require("discord.js");
 
 exports.run = (client, message, args) => {
@@ -16,6 +17,7 @@ exports.run = (client, message, args) => {
   if (servers[guild.id]) {
     if (servers[guild.id].currency !== "") currency = servers[guild.id].currency
   }
+  if (!userData.registered) message.channel.send("You are not registered, register to get free 100" + currency + ", register now by typing `" + config.prefix + "register`"); 
   if (user.bot) return;
   const embed = new RichEmbed()
     .setDescription(`**${user.tag}** has ${userData.money} ${currency}${db.debugmsg}`)

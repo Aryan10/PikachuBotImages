@@ -1,5 +1,7 @@
 exports.run = (client, message, args) => {
+  message.channel.startTyping();
   setTimeout(() => {
+    message.channel.stopTyping();
     message.channel.send('', {
       file: {
         attachment: './images/slowpoke/slowpoke.png'

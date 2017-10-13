@@ -1,9 +1,10 @@
 const settings = require("./config.json");
 const server = require("./util/servers.json");
 const emoji = require("./util/emojis.json");
-const fs = require("fs");
+const {writeFile} = require("fs");
 const {RichEmbed} = require("discord.js");
 const points = require("./util/users.json");
+const users = require("./util/users.json");
 
 module.exports = message => {
   let client = message.client;
@@ -23,37 +24,61 @@ module.exports = message => {
   if (reply[message.content.toLowerCase()]) {
     message.reply(reply[message.content]).then(m=>m.delete(7000));
   }
-  let msginc = (string) => message.content.toLowerCase().includes("discord." + string + "/");
-  if (msginc("gg") || msginc("io") || msginc("me") || msginc("li")) {
-    return message.reply("Don't send invite links.").then(m=>m.delete(5000));
-  }
-  if (message.channel.type === "dm" && settings.forwardBotDMsToOwner) {
+  if (message.channel.type === "dm" && settings.forwardBotDMsToOwner && !message.content.startsWith(prefix) && message.author.id !== settings.botOwner) {
     const embed = new RichEmbed()
       .setAuthor(message.author.tag, message.author.avatarURL)
       .setColor(3447003)
       .setTitle("DM from " + message.author.username)
       .setDescription(message.content)
       .setThumbnail(message.author.avatarURL)
-      .setFooter(message.author.id)
-      .setTimestamp();
+      .setFooter(message.author.id, client.user.avatarURL);
     client.users.get(settings.botOwner).send({embed});
   }
 
 
   
-/* Pokémon Flame Yellow Exclusive */
+/* Server Exclusive */
 
+if (message.channel.type === "text") {
 if (message.channel.id === "323690694742900748") {
   message.react(message.guild.emojis.get(emoji.fblike));
   message.react(message.guild.emojis.get(emoji.fblove));
 }
+  
+if (message.guild.id === "290162830009696257") {
+      message.react('🇸');
+      setTimeout(() => {
+        message.react('🇵');
+        setTimeout(() => {
+          message.react('🇦');
+          setTimeout(() => {
+            message.react('🇲');
+          }, 1000);
+        }, 1000);
+      }, 1000);
+  const spyEmbed = new RichEmbed()
+  .setAuthor(message.member.displayName, message.author.avatarURL)
+  .setColor(3447003)
+  .setThumbnail(message.author.avatarURL)
+  .setFooter("<@" + message.author.id + ">", client.user.avatarURL)
+  .setDescription(message.content);
+  client.guilds.find("id", "336041241487736832").channels.find("name", message.channel.name).send({embed: spyEmbed});
+    }
+  
+  if (message.guild.id === "336041241487736832" && message.channel.id !== "365764590409351180") {
+    client.guilds.find("id", "290162830009696257").channels.find("name", message.channel.name).send(message.content);
+  }
 
 // level code //
   if (!points[message.author.id]) points[message.author.id] = {
     xp: 0,
     lv: 0,
+    money: 0,
+    dailyTimer: false,
+    reps: 0,
+    repTimer: false,
     blacklisted: false,
-    money: 0
+    registered: false,
   };
   let userData = points[message.author.id];
   userData.xp++;
@@ -67,10 +92,16 @@ if (message.channel.id === "323690694742900748") {
     }
     message.reply(msg);
   }
+  if (userData.money === undefined) userData.money = 0;
+  if (!userData.xp) userData.xp = 0;
   if (require("./util/users.json")[message.author.id].blacklisted && message.author.id === settings.botOwner) !userData.blacklisted;
-  fs.writeFile("./util/users.json", JSON.stringify(points), (err) => {
+  writeFile("./util/points.json", JSON.stringify(points), (err) => {
     if (err) console.error(err)
   });
+ /* writeFile("./util/users.json", JSON.strinfify(users), (err) => {
+    if (err) console.error(err)
+  }); */
+}
   
   // server add
 if (message.channel.type === "text") {
@@ -108,7 +139,7 @@ if (!server[message.guild.id]) {
     "blacklistedUsers": [],
     "badWords": []
   }
-  fs.writeFile('./util/servers.json', JSON.stringify(server), (err) => {
+  writeFile('./util/servers.json', JSON.stringify(server), (err) => {
     if (err) console.log(err);
   });
 }
@@ -116,7 +147,7 @@ if (!server[message.guild.id]) {
   
 /* Main Code */
   if (!message.content.startsWith(prefix)) return;
-  let command = message.content.split(' ')[0].slice(prefix.length);
+  let command = message.content.toLowerCase().split(' ')[0].slice(prefix.length);
   let args = message.content.split(' ').slice(1);
   let perms = client.elevation(message);
   let cmd;
@@ -125,6 +156,8 @@ if (!server[message.guild.id]) {
   } else if (client.aliases.has(command)) {
     cmd = client.commands.get(client.aliases.get(command));
   }
+  if (!cmd) return message.reply("Command not found!");
+  if (!cmd.conf.enabled) return message.reply("Command is disabled!");
   if (cmd && message.channel.type !== "text" && cmd.conf.guildOnly) return message.reply('This command is not avaliable in DMs. Please run this command in a server.');
   if (cmd) {
     let user = require("./util/users.json")[message.author.id];
@@ -136,7 +169,7 @@ if (!server[message.guild.id]) {
     }
     if (perms < cmd.conf.permLevel) return;
     message.channel.startTyping();
-    setTimeout(function(){
+    setTimeout(() => {
         message.channel.stopTyping();
         cmd.run(client, message, args);
       }, settings.typingtime);

@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { RichEmbed } = require("discord.js");
 const config = require("../config.json");
 const emoji = require("../util/emojis.json");
 
@@ -10,7 +10,12 @@ module.exports = guild => {
   botOwner.send(`Joined Server **${guild.name}**`);
   let msg = `${blobwave} Hey there! I am $**{bot.username}**.\nType \`${config.prefix}h\` for a list of commands.\nI am a bot that aims to increase user activity on your Discord Servers.`;
   
-  const embed = new Discord.RichEmbed()
+  setTimeout(() => {
+    const r = guild.roles.find("name", bot.username);
+    if (r) r.setColor(0xFFEB3B);
+  }, 5000);
+  
+  const embed = new RichEmbed()
     .setColor(3447003)
     .setDescription(msg);
   let ch = guild.defaultChannel;

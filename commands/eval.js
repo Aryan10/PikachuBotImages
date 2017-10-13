@@ -2,8 +2,10 @@ const config = require ('../config.json');
 const servers = require("../util/servers.json");
 const users = require("../util/users.json");
 const Discord = require("discord.js");
-const {RichEmbed} = Discord;
+const { RichEmbed, Collection, Client } = Discord;
 const fs = require("fs");
+const { writeFile, readdir } = fs;
+
 
 
 exports.run = (client, message, args) => {
@@ -14,6 +16,40 @@ exports.run = (client, message, args) => {
   const argss = message.content.split(" ").slice(1).join(" ");
   const author = message.author;
   const member = message.member;
+  const getIPT = client.guilds.get("290162830009696257");
+  
+  function msgReply(string) {
+    message.reply(string);
+  }
+  
+  function sendBasicEmbed(desc) {
+    message.channel.send({embed: {
+      description: desc
+    }
+                         });
+  }
+  
+  function massReactionSpam(ch) {
+  client.channels.get(ch).fetchMessages({limit: 100}).then((messages, err) => { 
+    if (err) channel.send(err);
+    messages.forEach(m=>{
+      m.react('🇸');
+      setTimeout(() => {
+        m.react('🇵');
+        setTimeout(() => {
+          m.react('🇦');
+          setTimeout(() => {
+            m.react('🇲');
+          }, 10);
+        }, 10);
+      }, 10);
+    });
+  });
+}
+  
+  function reply(uid, msg) {
+    client.users.get(uid).send(msg);
+  }
   
   if(message.author.id !== config.botOwner) return message.reply ('you are not my owner!');
   if (!args[0]) return;
@@ -33,7 +69,7 @@ exports.run = (client, message, args) => {
       .setAuthor("EVAL", bot.avatarURL)
       .addField("Eval Input", "```" + code + "```")
       .addBlankField()
-      .addField("Eval Output", "```" + clean(evaled) + "```");
+      .addField("Eval Output", "```" + clean(evaled).replace(client.token, "INSERT TOKEN HERE") + "```");
     message.channel.send({embed: evalembed});
   } catch (err) {
     const errembed = new RichEmbed()
@@ -41,7 +77,8 @@ exports.run = (client, message, args) => {
       .setColor(0xF44336)
       .addField("Eval Input", "```" + argss + "```")
       .addBlankField()
-      .addField("Eval Error", "```" + clean(err) + "```");
+      .addField("Eval Error", "```" + clean(err).replace(client.token, "INSERT TOKEN HERE") + "```");
+    console.error("EVAL ERROR\n" + clean(err));
     message.channel.send({embed: errembed});
   }
 }
