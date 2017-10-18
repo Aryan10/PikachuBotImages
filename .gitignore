@@ -22,4 +22,4 @@ LICENSE
 Procfile
 app.json
 package.json
-README.md
+*.md
