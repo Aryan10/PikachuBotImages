@@ -23,7 +23,9 @@ if(process.version.slice(1).split('.')[0]<8) throw new Error('Node 8.0.0 or high
 
 require("./util/eventLoader.js")(client);
 
-client.login(process.env.TOKEN);
+let token = config.token;
+if (config.EnvToken) token = process.env.TOKEN;
+client.login(token);
 
 const log = message => {
 console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);

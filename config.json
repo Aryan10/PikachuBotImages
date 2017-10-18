@@ -1,22 +1,24 @@
 {
-"token": "process.env.TOKEN",
-
-"prefix": "+",
-"botOwner": "273865811133857792",
+  "token": "insert token here",
+  "EnvToken": true,
   
-"typingtime": 700,
-"botlogchannel": "360358878560518144",
-"forwardBotDMsToOwner": true,
+  "prefix": "+",
+  "botOwner": "273865811133857792",
+  
+  "typingtime": 700,
+  
+  "botlogchannel": "360358878560518144",
+  "forwardBotDMsToOwner": true,
+  
+  "status": "online",
+  "game": "+h",
+  "rotategame": true,
+  "rotategametime": 30000,
+  "streaming": true,
+  "streamingurl": "http://www.twitch.tv/logout",
 
-"status": "online",
-"game": "+h",
-"rotategame": true,
-"rotategametime": 30000,
-"streaming": true,
-"streamingurl": "http://www.twitch.tv/logout",
-
-"serverinvite": "https://discord.gg/j4XtMK2",
-"botinvite": "http://adf.ly/1oDiEY",
-"botsdiscordpwinvite": "http://adf.ly/1oDiHy",
-"discordbotsorginvite": "http://q.gs/Dszdg",
-"githubrepo": "http://q.gs/Dszdm"}
+  "serverinvite": "https://discord.gg/j4XtMK2",
+  "botinvite": "http://adf.ly/1oDiEY",
+  "botsdiscordpwinvite": "http://adf.ly/1oDiHy",
+  "discordbotsorginvite": "http://q.gs/Dszdg",
+  "githubrepo": "http://q.gs/Dszdm"}

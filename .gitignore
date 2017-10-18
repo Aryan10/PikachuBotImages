@@ -12,6 +12,14 @@ Dockerfile
 docker-compose.yml
 
 # Specific Files
-config.jso
-util/servers.jso
-util/users.jso
+watch.json
+app.json
+util/*.json
+*/database
+data
+modules
+LICENSE
+Procfile
+app.json
+package.json
+README.md
