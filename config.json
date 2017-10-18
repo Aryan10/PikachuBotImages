@@ -9,7 +9,7 @@
 "forwardBotDMsToOwner": true,
 
 "status": "online",
-"game": "Say +h",
+"game": "+h",
 "rotategame": true,
 "rotategametime": 30000,
 "streaming": true,
