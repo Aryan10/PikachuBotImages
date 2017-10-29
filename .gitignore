@@ -11,15 +11,20 @@ npm-debug.log
 Dockerfile
 docker-compose.yml
 
-# Specific Files
-watch.json
-app.json
+# Specific File Types
 util/*.json
 */database
+*.md
+
+# Folders
 data
 modules
+
+# Git Files
 LICENSE
 Procfile
+
+# Json Files
+watch.jso
 app.json
 package.json
-*.md

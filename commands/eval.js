@@ -51,6 +51,8 @@ exports.run = (client, message, args) => {
     client.users.get(uid).send(msg);
   }
   
+  const cmdBool = message.content.startsWith(config.prefix + "seval");
+  
   if(message.author.id !== config.botOwner) return message.reply ('you are not my owner!');
   if (!args[0]) return;
   const clean = text => {
@@ -70,7 +72,7 @@ exports.run = (client, message, args) => {
       .addField("Eval Input", "```" + code + "```")
       .addBlankField()
       .addField("Eval Output", "```" + clean(evaled).replace(client.token, "INSERT TOKEN HERE") + "```");
-    message.channel.send({embed: evalembed});
+    if (!cmdBool) message.channel.send({embed: evalembed});
   } catch (err) {
     const errembed = new RichEmbed()
       .setAuthor("EVAL", bot.avatarURL)
@@ -86,7 +88,7 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['jsbot'],
+  aliases: ['jsbot', 'seval'],
   permLevel: 4
 };
 

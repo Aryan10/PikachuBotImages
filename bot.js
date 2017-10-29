@@ -7,7 +7,8 @@ const points = require("./util/users.json");
 const users = require("./util/users.json");
 
 module.exports = message => {
-  let client = message.client;
+	
+	let client = message.client;
   let prefix = [settings.prefix];
   if(message.channel.type !== "dm"){ 
     if(server[message.guild.id]){ 
@@ -35,6 +36,7 @@ module.exports = message => {
     client.users.get(settings.botOwner).send({embed});
   }
 
+  if (message.channel.type === "dm" && !message.content.startsWith(prefix[0])) message.channel.send("`" + prefix[0] + "h` for help.");
 
   
 /* Server Exclusive */
