@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
   }
   let game;
   if (mention.presence.game === null) {
-    game = "*---*"
+    game = "*Nothing*"
   }else {
     game = mention.presence.game.name;
   }

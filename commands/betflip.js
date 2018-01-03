@@ -29,7 +29,7 @@ exports.run = (client, message, args) => {
   if (displayAmount < 0) displayAmount = 0;
   message.channel.send(`You got ${botChoice}.\nYou won ${displayAmount}!`, {files: ["./images/coins/" + botChoice.toLowerCase() + ".png"]});
   users[message.author.id].money += wonAmount;
-  writeFile("../util/users.json", JSON.stringify(users), (err) => {
+  writeFile("/app/util/users.json", JSON.stringify(users), (err) => {
     if (err) console.error(err)
   });
 }

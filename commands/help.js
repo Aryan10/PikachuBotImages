@@ -1,14 +1,14 @@
 const Discord = require("discord.js");
 const settings = require('../config.json');
 const config = require('../config.json');
-const { RichEmbed } = Discord;
-
 exports.run = (client, message, args) => {
   if (!args[0]) {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
-    const embed = new RichEmbed()
-      .setAuthor("List Of Modules & there Commands", client.user.avatarURL)
+    
+    /* new code starts here, delete this part if not works, replace with original if not works */
+    const embed = new Discord.RichEmbed()
+      .setAuthor("List Of Modules & there Commands.", client.user.avatarURL)
       .addField("Admin", `\`\`\`${client.commands.filter(c=>c.help.module === "Admin").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
       .addField("Fun", `\`\`\`${client.commands.filter(c=>c.help.module === "Fun").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
       .addField("Help", `\`\`\`${client.commands.filter(c=>c.help.module === "Help").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
@@ -16,16 +16,17 @@ exports.run = (client, message, args) => {
       .addField("Pokemon", `\`\`\`${client.commands.filter(c=>c.help.module === "Pokemon").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
       .addField("Pokedex", `\`\`\`${client.commands.filter(c=>c.help.module === "Pokedex").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
       .addField("XP", `\`\`\`${client.commands.filter(c=>c.help.module === "XP").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
-      .setColor(3447003)
-    message.author.send({embed});
-    message.author.send(`To add me to your server, use this link -> https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=214695859\nYou can use \`${config.prefix}modules\` command to see a list of all modules.\nYou can use \`${config.prefix}commands ModuleName\`\n(for example \`${config.prefix}commands Fun\`) to see a list of all of the commands in that module.\nFor a specific command help, use \`${config.prefix}help CommandName\` (for example \`${config.prefix}help 8ball\`)\n\n**LIST OF COMMANDS CAN BE FOUND BY TYPING \`${config.prefix}help\`**\n\nPikaBot Support Server: ${config.serverinvite}`);
+      .addField("Gambling", `\`\`\`${client.commands.filter(c=>c.help.module === "Gambling").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
+       .addField("Waifu", `\`\`\`${client.commands.filter(c=>c.help.module === "Waifu").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
+ .addField("Music", `\`\`\`${client.commands.filter(c=>c.help.module === "music").map(cmd=>`${config.prefix}${cmd.help.name}${' '.repeat(longest - cmd.help.name.length)}`).join("\n")}\n\`\`\``)
+     message.author.send({embed: embed});
+    message.author.send(`To add me to your server, use this link -> https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=214695859\nYou can use \`${config.prefix}modules\` command to see a list of all modules.\nYou can use \`${config.prefix}commands ModuleName\`\n(for example \`${config.prefix}commands Fun\`) to see a list of all of the commands in that module.\nFor a specific command help, use \`${config.prefix}help CommandName\` (for example \`${config.prefix}help 8ball\`)\n\n**LIST OF COMMANDS CAN BE FOUND BY TYPING \`${config.prefix}help\`**\n\nDiscord Support Server: ${config.serverinvite}`);
     message.author.send({embed: {
       color:4447003,
       description:`Type ${settings.prefix}help <commandname> for details on a specific command.\nType ${settings.prefix}modules for a list of modules.`}});
     if (message.channel.type !== "dm") message.reply("Check your Direct Message!");
-    /* new code ends here */
   } else {
-    let command = args[0].toLowerCase();
+    let command = args[0];
     if (client.commands.has(command)) {
       command = client.commands.get(command);
     }else if (client.aliases.has(command)) {
@@ -34,16 +35,12 @@ exports.run = (client, message, args) => {
       return message.reply("Can't find that command.");
     }
     let ally = command.conf.aliases.join(" / "+ config.prefix);
-    let displayMdls = command.help.module;
-    if (displayMdls === "Admin") displayMdls = "Administration";
-    if (displayMdls === "Other") displayMdls = "Utility";
     if (ally !== "") ally = "/ " + config.prefix + ally;
-    const cmdhelp = new RichEmbed()
+    const cmdhelp = new Discord.RichEmbed()
       .setColor(4447003)
-      .setDescription(`\`${settings.prefix}${command.help.name} ${ally}\`\n${command.help.description}\n**${command.help.permit}**\n\n`)
-    //  .addBlankField()
+      .setDescription(`\`${settings.prefix}${command.help.name} ${ally}\`\n${command.help.description}\n**${command.help.permit}**`)
       .addField(`Usage`, `\`${settings.prefix}${command.help.usage}\``)
-      .setFooter(`Module: ${displayMdls}`)
+      .setFooter(`Module: ${command.help.module}`)
       message.channel.send({embed: cmdhelp});
     }
 };

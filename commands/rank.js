@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const points = require("../util/users.json");
+const points = require("/app/util/users.json");
 
 exports.run = (client, message, args) => {
   let user = message.mentions.users.first();
@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
     .setAuthor(user.username, user.avatarURL)
     .setTitle("🗒 Rank")
     .setThumbnail(user.avatarURL)
-    .addField("Global", `:star2: | Level: ${data.lv}\n:speech_balloon: | Total XP: ${data.xp}`)
+    .addField("Global", `:star2: | Level: ${data.lv}\n:speech_balloon: | Total XP: ${data.xp}\nShiny: ${data.shiny}`)
     .addField("Server", "_Coming soon :)_")
     .setFooter("Level XP", client.user.avatarURL)
     .setTimestamp()

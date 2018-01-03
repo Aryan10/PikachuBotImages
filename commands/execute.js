@@ -1,5 +1,6 @@
 const config = require("../config.json");
 
+
 exports.run = (client, message, args) => {
   if (message.author.id !== config.botOwner) return message.reply("this command can be used by bot owner only.");
   let params = message.content.toLowerCase().split(" ").slice(1).join(" ");
@@ -33,5 +34,6 @@ exports.help = {
   usage: 'excute <event> [mention]', 
   module: 'Admin', 
   permit: 'Bot Owner Only', 
-  alias: ' / test / action'
+  alias: ' / test / action',
+cooldown: 86400
 }

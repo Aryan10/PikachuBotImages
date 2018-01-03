@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
   if (!money) money = 0;
   users[user.id].money -= money;
   message.channel.send(`Took ${money} from ${user.tag}!`);
-  writeFile("../util/users.json", JSON.stringify(users), (err) => {
+  writeFile("/app/util/users.json", JSON.stringify(users), (err) => {
     if (err) console.error(err)
   });
 }

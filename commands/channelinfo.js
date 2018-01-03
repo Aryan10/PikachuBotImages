@@ -9,7 +9,6 @@ exports.run = (client, message, args) => {
   if (!ch) ch = message.channel;
   let topic = ch.topic;
   if (!topic) topic = "No topic set.";
-  if (ch.type !== "text") return message.reply("This command is for text channels only.");
 
   const embed = new Discord.RichEmbed()
     .setTitle(ch.name)

@@ -18,7 +18,7 @@ exports.run = (client, message, args) => {
   userData.money -= money;
   targetData.money += parseInt(money);
   message.reply("Transferred :thumbsup:");
-  writeFile("../util/users.json", JSON.stringify(users), (err) => {
+  writeFile("/app/util/users.json", JSON.stringify(users), (err) => {
     if (err) console.error(err)
   });
 }

@@ -6,12 +6,12 @@ exports.run = (client, message, args) => {
   const author = `<@${message.author.id}>`;
   
   
-  if (author === mention) return message.reply(`Laughing on yourself :joy:`, {
-    files: ["http://i.imgur.com/u8Z66kO.gif"] // Or replace with FileOptions object
+  if (author === mention) return message.reply(`laughing on yourself`, {
+    file: "http://i.imgur.com/u8Z66kO.gif" // Or replace with FileOptions object
 });
  
-  return  message.channel.send(`${author} _laughed on_ ${mention}!`, {
-    files: ["http://i.imgur.com/1AkDb.gif"] // Or replace with FileOptions object
+  return  message.channel.send(`_${author} laughed on ${mention}!_`, {
+    file: "http://i.imgur.com/1AkDb.gif" // Or replace with FileOptions object
 });
     
                          
@@ -26,7 +26,7 @@ exports.conf = {
 
 exports.help = {
   name: 'laugh',
-  description: 'Laugh on someone or yourself.',
+  description: 'laugh on someone',
   usage: 'laugh [mention]',
   module: 'Fun',
   permit: ' ',

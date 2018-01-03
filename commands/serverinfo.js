@@ -34,7 +34,7 @@ exports.run = (client, message, args) => {
     .addField("Members", `${guild.memberCount} Total | ${guild.members.filter(m=>m.user.bot).size} Bots\n${guild.members.filter(m => m.presence.status === 'online').size} Online | ${guild.members.filter(m => m.presence.status === 'idle').size} Idle | ${guild.members.filter(m => m.presence.status === 'dnd').size} Do Not Disturb`)
     .addField("Channels", `${guild.channels.size} Total\n${guild.channels.filter(c=>c.type === "text").size} Text | ${guild.channels.filter(c=>c.type === "voice").size} Voice`)
     .addField("Roles", `${guild.roles.size} Total`)
-    .addField("Region", `${capitalizeFirstLetter(guild.region.split("-")[0])} ${capitalizeFirstLetter(guild.region.split("-")[1])}`)
+    .addField("Region", capitalizeFirstLetter(guild.region))
     .addField("Emojis", `${guild.emojis.size} Total`)
     .addField("Verification Level", verlvltxt)
     .addField("Created On", guild.createdAt)

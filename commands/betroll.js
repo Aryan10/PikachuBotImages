@@ -18,9 +18,10 @@ exports.run = (client, message, args) => {
   let wonAmount = args[0] * result;
   let displayAmount = wonAmount;
   if (displayAmount < 0) displayAmount = 0;
-  message.channel.send(`You rolled ${br}.\nYou won ${displayAmount}!`);
+message.channel.send({embed: { color: 3447003, description: `You rolled ${br}.\nYou won ${displayAmount}<:Pokecoin:288630946171846656> ` }});
+  
   users[message.author.id].money += wonAmount;
-  writeFile("../util/users.json", JSON.stringify(users), (err) => {
+  writeFile("/app/util/users.json", JSON.stringify(users), (err) => {
     if (err) console.error(err)
   });
 }

@@ -1,9 +1,14 @@
 exports.run = (client, message, args) => {
-
+const users = require("../util/users.json");
+const { writeFile } = require("fs");
 var shiny = Math.floor(Math.random() * 8);
 if(shiny == 4) {
 shinyzer='xy-animated-shiny'
 msg='Wow, you are lucky, you got a Shiny Pokemon.'
+users[message.author.id].shiny += 1;
+  writeFile("/app/util/users.json", JSON.stringify(users), (err) => {
+    if (err) console.error(err)
+  });
 }else {
 shinyzer='xy-animated'
 msg='You got an awesome Pokemon.'
@@ -20,10 +25,13 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'random',
-  description: 'Sends a random Pokemon gif from Gen6.',
-  usage: 'random',
+  name: 'shinyhuntr',
+  description: 'Shiny hunting.',
+  usage: 'shinyhuntr',
   module: 'Pokemon',
   permit: ' ',
   alias: ' '
 };
+
+
+

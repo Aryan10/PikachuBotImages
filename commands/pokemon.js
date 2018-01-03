@@ -3,12 +3,13 @@ exports.run = (client, message, args) => {
   let sprite = message.content.toLowerCase().split(' ').slice(1).join(" ");
   if (!sprite) return;
   message.channel.send({files: [`http://www.pokestadium.com/sprites/xy/${sprite.replace(/ /g,'-')}.gif`]});
+  
 }
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['pkmn', 'mon'],
+  aliases: ['pkmn', 'poke'],
   permLevel: 0
 };
 

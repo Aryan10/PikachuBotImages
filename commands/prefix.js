@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_GUILD") && newPrefix !== "") return reply("You don't have permission.");
   if (newPrefix.length > 3) return reply("You can't use a prefix longer than 3 digits.");
   serverData.prefix = newPrefix;
-  writeFile('../util/servers.json', JSON.stringify(servers), (err) => {
+  writeFile('/app/util/servers.json', JSON.stringify(servers), (err) => {
     if (err) reply(err);
   });
   reply("Prefix changed to " + newPrefix + "\n_**Note:** You can still use default prefix._");

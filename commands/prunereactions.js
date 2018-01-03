@@ -1,5 +1,4 @@
 exports.run = (client, message, args) => {
-  if (message.guild.id === "290162830009696257") return message.reply("This server is blacklisted to use this command.");
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You don't have the permission to clear reactions from messages.");
   if (!parseInt(args[0],10)) return message.reply(`Please provide a number of messages to clean reactions from!`);
   message.channel.fetchMessages({limit:parseInt(args[0],10)}).then(msg => {

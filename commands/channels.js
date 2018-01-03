@@ -7,15 +7,14 @@ exports.run = (client, message, args) => {
     .setColor(3447003)
     .setFooter(`Type ${config.prefix}cinfo <channel> to get info on a specific channel.`)
     .addField("Text", message.guild.channels.filter(c=>c.type === "text").map(c=>c.name).join(", "))
-    .addField("Voice", message.guild.channels.filter(c=>c.type === "voice").map(c=>c.name).join(", "))
-    .addField("Category", "-" + message.guild.channels.filter(c=>c.type === "category").map(c=>c.name).join(", "));
+    .addField("Voice", message.guild.channels.filter(c=>c.type === "voice").map(c=>c.name).join(", "));
   message.channel.send({embed});
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ['chnls'],
+  aliases: [],
   permLevel: 0
 };
 

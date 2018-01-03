@@ -1,24 +1,22 @@
 {
-  "token": "insert token here",
-  "EnvToken": true,
-  
-  "prefix": "+",
-  "botOwner": "273865811133857792",
-  
-  "typingtime": 700,
-  
-  "botlogchannel": "360358878560518144",
-  "forwardBotDMsToOwner": true,
-  
-  "status": "online",
-  "game": "+h",
-  "rotategame": true,
-  "rotategametime": 30000,
-  "streaming": true,
-  "streamingurl": "http://www.twitch.tv/logout",
+"token": "process.env.TOKEN",
 
-  "serverinvite": "https://discord.gg/j4XtMK2",
-  "botinvite": "http://adf.ly/1oDiEY",
-  "botsdiscordpwinvite": "http://adf.ly/1oDiHy",
-  "discordbotsorginvite": "http://q.gs/Dszdg",
-  "githubrepo": "http://q.gs/Dszdm"}
+"prefix": ".",
+"botOwner": "261792945483546625",
+
+"typingtime": 500,
+"botlogchannel": "395909283490955264",
+"forwardBotDMsToOwner": true,
+
+"status": "online",
+"game": "h for help",
+"rotategame": true,
+"rotategametime": 30000,
+"streaming": true,
+"streamingurl": "http://www.twitch.tv/arunkapil123",
+
+"serverinvite": "https://discord.gg/N7n2W2k",
+"botinvite": "http://bit.ly/2ySqdY9",
+"botsdiscordpwinvite": "no",
+"discordbotsorginvite": "no",
+"githubrepo": "no"}

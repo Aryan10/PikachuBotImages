@@ -5,15 +5,15 @@ exports.run = (client, message, args) => {
   const author = `<@${message.author.id}>`;
   
   
-  if (bot === mention) return message.reply(`Thanks for patting me :3`, {
-    files: ["http://i1.wp.com/www.thebakingspoon.com/wp-content/uploads/2013/12/patt.gif"] // Or replace with FileOptions object
+  if (bot === mention) return message.reply(`thanks for patting me :yes:`, {
+    file: "http://i1.wp.com/www.thebakingspoon.com/wp-content/uploads/2013/12/patt.gif" // Or replace with FileOptions object
 });
- if (author === mention) return message.reply(`Patting yourself xD :c`, {
-    files: ["https://media.giphy.com/media/TlK63Eot2xTSuLMlUpq/giphy.gif"] // Or replace with FileOptions object
+ if (author === mention) return message.reply(`patting yourself :pikasad:`, {
+    file: "https://media.giphy.com/media/TlK63Eot2xTSuLMlUpq/giphy.gif" // Or replace with FileOptions object
 });
  
-  return  message.channel.send(`${author} _patted_ ${mention}!`, {
-    files: ["https://media.giphy.com/media/SHyuhBtRr8Zeo/giphy.gif"] // Or replace with FileOptions object
+  return  message.channel.send(`_${author} patted ${mention}!_`, {
+    file: "https://media.giphy.com/media/SHyuhBtRr8Zeo/giphy.gif" // Or replace with FileOptions object
 });
     
                          
@@ -28,7 +28,7 @@ exports.conf = {
 
 exports.help = {
   name: 'pat',
-  description: 'Pat someone.',
+  description: 'pat someone ',
   usage: 'pat [mention]',
   module: 'Fun',
   permit: ' ',

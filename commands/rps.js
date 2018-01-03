@@ -10,9 +10,9 @@ exports.run = (client, message, args) => {
   const won = "you won";
   const loss = "you lost";
   var result;
-  const emoji_rock = "💎";
-  const emoji_scissor = "✂";
-  const emoji_paper = "🗞";
+  const emoji_rock = "✊";
+  const emoji_scissor = "✌";
+  const emoji_paper = "✋";
   let emoji;
   let my_emoji;
   if (choice === "rock") {
