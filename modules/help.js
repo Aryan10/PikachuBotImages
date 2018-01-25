@@ -1,3 +1,0 @@
-exports.moduledata = {
-  "name": "Help"
-}
